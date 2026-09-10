@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="nl" class="h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,26 +8,24 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
+<body class="flex h-full flex-col bg-surface text-ink antialiased">
 
-<header class="px-3 pt-3 sm:px-6 sm:pt-6">
-    <div class="mx-auto w-full max-w-7xl rounded-2xl bg-secondary px-5 py-4">
+<header class="border-b-4 border-primary bg-secondary">
+    <div class="mx-auto flex h-16 max-w-5xl items-center px-4 sm:px-6">
         <a href="{{ route('welcome') }}">
-            <img src="{{ asset('images/logo-light.png') }}"
-                 srcset="{{ asset('images/logo-light.png') }} 1x, {{ asset('images/logo-light@2x.png') }} 2x"
-                 alt="Spoorwegen Veldonia" class="h-9 w-auto">
+            <x-application-logo variant="light" class="h-9 sm:h-10"/>
         </a>
     </div>
 </header>
 
-<main class="flex flex-1 items-center px-3 py-8 sm:px-6">
-    <div class="mx-auto w-full max-w-md">
+<main class="flex flex-1 items-start justify-center px-4 py-12 sm:px-6">
+    <div class="w-full max-w-md">
         {{ $slot }}
     </div>
 </main>
 
-<footer class="px-3 pb-3 sm:px-6 sm:pb-6">
-    <div class="mx-auto flex w-full max-w-7xl flex-col gap-1.5 rounded-2xl bg-secondary px-5 py-5 text-xs text-secondary-400 sm:flex-row sm:justify-between">
+<footer class="border-t border-line bg-surface-muted">
+    <div class="mx-auto flex max-w-5xl flex-col gap-1.5 px-4 py-6 text-xs text-ink-soft sm:flex-row sm:justify-between sm:px-6">
         <p>&copy; {{ date('Y') }} Spoorwegen Veldonia</p>
         <p>Veldonia is een fictief land — schoolopdracht Software Development 3</p>
     </div>

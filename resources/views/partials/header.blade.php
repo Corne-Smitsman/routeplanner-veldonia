@@ -1,27 +1,22 @@
 @php
     $navigatie = [
-        ['label' => 'Home', 'route' => 'home', 'actief' => 'home'],
-        ['label' => 'Steden', 'route' => 'stations.index', 'actief' => 'stations.*'],
+        ['label' => 'Steden',       'route' => 'stations.index',    'actief' => 'stations.*'],
         ['label' => 'Verbindingen', 'route' => 'connections.index', 'actief' => 'connections.*'],
-        ['label' => 'Over Veldonia', 'route' => 'about', 'actief' => 'about'],
+        ['label' => 'Over Veldonia','route' => 'about',             'actief' => 'about'],
     ];
 @endphp
 
-<header class="sticky top-0 z-40 bg-surface px-3 py-3 sm:px-6 sm:py-4">
-    <div class="mx-auto w-full max-w-7xl rounded-2xl bg-secondary">
-
-        <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
-            <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo-light.png') }}"
-                     srcset="{{ asset('images/logo-light.png') }} 1x, {{ asset('images/logo-light@2x.png') }} 2x"
-                     alt="Spoorwegen Veldonia" class="h-9 w-auto">
+<header class="sticky top-0 z-40">
+    <div class="bg-secondary">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+            <a href="{{ route('home') }}" class="shrink-0">
+                <x-application-logo variant="light" class="h-9 sm:h-10"/>
             </a>
 
-            <div class="flex items-center gap-3 text-sm">
-                <span class="hidden text-secondary-300 sm:inline">{{ auth()->user()->name }}</span>
-                <a href="{{ route('profile.edit') }}" class="text-secondary-200 transition-colors hover:text-ink-inverse">
-                    Profiel
-                </a>
+            <div class="flex items-center gap-4 text-sm">
+                <span class="hidden text-secondary-300 md:inline">{{ auth()->user()->name }}</span>
+                <a href="{{ route('profile.edit') }}"
+                   class="text-secondary-200 transition-colors hover:text-ink-inverse">Profiel</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
@@ -31,21 +26,32 @@
                 </form>
             </div>
         </div>
+    </div>
 
-        <nav class="border-t border-line-dark px-5" aria-label="Hoofdnavigatie">
-            <div class="flex flex-wrap gap-1 text-sm">
-                @foreach ($navigatie as $item)
+        <nav class="border-b border-line bg-surface" aria-label="Hoofdnavigatie">
+        <div class="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 text-sm sm:px-6">
+            <a href="{{ route('home') }}"
+               @class([
+                   'inline-flex shrink-0 items-center border-b-2 px-3 py-3 transition-colors',
+                   'border-primary font-medium text-ink' => request()->routeIs('home'),
+                   'border-transparent text-ink-muted hover:text-ink' => ! request()->routeIs('home'),
+               ])
+               @if(request()->routeIs('home')) aria-current="page" @endif>Home</a>
+
+            @foreach ($navigatie as $item)
+                @if ($item['route'])
                     <a href="{{ route($item['route']) }}"
                        @class([
-                           'inline-flex items-center border-b-2 px-3 py-3 transition-colors',
-                           'border-primary-400 font-medium text-ink-inverse' => request()->routeIs($item['actief']),
-                           'border-transparent text-secondary-300 hover:text-ink-inverse' => ! request()->routeIs($item['actief']),
+                           'inline-flex shrink-0 items-center border-b-2 px-3 py-3 transition-colors',
+                           'border-primary font-medium text-ink' => request()->routeIs($item['actief']),
+                           'border-transparent text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
                        ])
-                       @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
-                        {{ $item['label'] }}
-                    </a>
-                @endforeach
-            </div>
-        </nav>
-    </div>
+                       @if(request()->routeIs($item['actief'])) aria-current="page" @endif>{{ $item['label'] }}</a>
+                @else
+                    <span class="inline-flex shrink-0 cursor-not-allowed items-center border-b-2 border-transparent px-3 py-3 text-ink-soft"
+                          title="Binnenkort beschikbaar">{{ $item['label'] }}</span>
+                @endif
+            @endforeach
+        </div>
+    </nav>
 </header>

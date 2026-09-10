@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="nl" class="h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,26 +8,24 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
+<body class="flex h-full flex-col bg-surface text-ink antialiased">
 
 @include('partials.header')
 
-<main class="flex-1 px-3 pb-6 sm:px-6">
-    <div class="mx-auto w-full max-w-7xl space-y-6">
-        @if (session('success'))
-            <x-alert>{{ session('success') }}</x-alert>
-        @endif
+<main class="flex-1">
+    @if (session('status') || session('success'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <x-alert>{{ session('status') ?? session('success') }}</x-alert>
+        </div>
+    @endif
 
-        @if (session('status'))
-            <x-alert>{{ session('status') }}</x-alert>
-        @endif
-
-        @if (session('error'))
+    @if (session('error'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
             <x-alert type="error">{{ session('error') }}</x-alert>
-        @endif
+        </div>
+    @endif
 
-        @yield('content')
-    </div>
+    @yield('content')
 </main>
 
 @include('partials.footer')
