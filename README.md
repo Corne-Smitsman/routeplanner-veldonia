@@ -58,6 +58,9 @@ npm run build   # voor oplevering
 Elke view laadt de stylesheet met `@vite('resources/css/app.css')`.
 Vanaf user story 0.3 gebeurt dat één keer centraal in de masterlayout.
 
+**Conventie**: paginacontent staat in een container `mx-auto max-w-7xl px-6`,
+zodat alle pagina's dezelfde breedte en marges hebben.
+
 ## Testaccounts
 
 Vul dit in zodra de seeder uit user story 5.4 klaar is.
