@@ -1,4 +1,3 @@
-{{-- Tijdelijke placeholder — vervang deze door je eigen views (user story 0.2). --}}
 <!doctype html>
 <html lang="nl">
 <head><meta charset="utf-8"><title>Routeplanner Veldonia</title></head>
