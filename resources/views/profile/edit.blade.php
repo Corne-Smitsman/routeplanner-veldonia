@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:px-6">
+    <div class="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
         <section class="rounded-xl border border-line">
             @include('profile.partials.update-profile-information-form')
         </section>

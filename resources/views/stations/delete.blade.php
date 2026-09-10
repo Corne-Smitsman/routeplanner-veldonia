@@ -3,7 +3,7 @@
 @section('title', $station->name . ' verwijderen')
 
 @section('content')
-    <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <x-breadcrumbs :items="[['label' => 'Steden', 'url' => route('stations.index')], ['label' => $station->name, 'url' => route('stations.show', $station)], ['label' => 'Verwijderen']]"/>
 
         <div class="mt-6 rounded-xl border border-danger">

@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <div class="rounded-xl border border-line">
             <div class="border-b border-line px-5 py-3.5">
                 <h2 class="font-semibold text-ink">Gegevens</h2>

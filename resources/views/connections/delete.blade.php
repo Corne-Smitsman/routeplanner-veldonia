@@ -3,7 +3,7 @@
 @section('title', 'Verbinding verwijderen')
 
 @section('content')
-    <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <x-breadcrumbs :items="[['label' => 'Verbindingen', 'url' => route('connections.index')], ['label' => 'Verwijderen']]"/>
 
         <div class="mt-6 rounded-xl border border-danger">

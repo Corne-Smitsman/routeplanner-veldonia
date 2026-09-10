@@ -11,7 +11,7 @@
 <body class="flex h-full flex-col bg-surface text-ink antialiased">
 
 <header class="border-b-4 border-primary bg-secondary">
-    <div class="mx-auto flex h-16 max-w-5xl items-center px-4 sm:px-6">
+    <div class="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6">
         <a href="{{ route('welcome') }}">
             <x-application-logo variant="light" class="h-9 sm:h-10"/>
         </a>
@@ -25,7 +25,7 @@
 </main>
 
 <footer class="border-t border-line bg-surface-muted">
-    <div class="mx-auto flex max-w-5xl flex-col gap-1.5 px-4 py-6 text-xs text-ink-soft sm:flex-row sm:justify-between sm:px-6">
+    <div class="mx-auto flex max-w-7xl flex-col gap-1.5 px-4 py-6 text-xs text-ink-soft sm:flex-row sm:justify-between sm:px-6">
         <p>&copy; {{ date('Y') }} Spoorwegen Veldonia</p>
         <p>Veldonia is een fictief land — schoolopdracht Software Development 3</p>
     </div>

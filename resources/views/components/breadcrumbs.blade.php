@@ -3,7 +3,11 @@
 <nav aria-label="Kruimelpad" {{ $attributes }}>
     <ol class="flex flex-wrap items-center gap-2 text-sm text-ink-muted">
         <li>
-            <a href="{{ route('home') }}" class="transition-colors hover:text-ink">Home</a>
+            @if (count($items) === 0)
+                <span class="font-medium text-ink" aria-current="page">Home</span>
+            @else
+                <a href="{{ route('home') }}" class="transition-colors hover:text-ink">Home</a>
+            @endif
         </li>
 
         @foreach ($items as $item)

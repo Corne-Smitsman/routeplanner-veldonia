@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="border-b border-line bg-surface-muted">
-        <div class="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Verbindingen', 'url' => route('connections.index')], ['label' => 'Verbinding toevoegen']]"/>
 
             <h1 class="text-2xl font-semibold text-ink">Verbinding toevoegen</h1>
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:px-6">
+    <div class="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
         <x-validation-errors/>
 
         <form method="POST" action="{{ route('connections.store') }}" class="rounded-xl border border-line">
