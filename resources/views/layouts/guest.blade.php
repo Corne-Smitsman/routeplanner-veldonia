@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl" class="h-full">
+<html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex h-full flex-col bg-surface text-ink antialiased">
+<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
 
 <header class="border-b-4 border-primary bg-secondary">
     <div class="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6">
