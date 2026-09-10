@@ -5,23 +5,27 @@
         ['label' => 'Verbindingen', 'route' => 'connections.index', 'actief' => 'connections.*'],
     ];
 
-    $knop = ['label' => 'Over Veldonia', 'route' => 'about', 'actief' => 'about'];
+    $cta = ['label' => 'Over Veldonia', 'route' => 'about', 'actief' => 'about'];
 @endphp
 
-<header class="sticky top-0 z-40">
-    <div class="bg-secondary">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-xs sm:px-6">
-            <span class="truncate text-secondary-300">{{ auth()->user()->name }}</span>
+<div class="sticky top-0 z-50"
+     x-data="{ scrolled: false, open: false }"
+     x-init="scrolled = window.scrollY > 10"
+     x-on:scroll.window="scrolled = window.scrollY > 10"
+     x-on:keydown.escape.window="open = false">
 
-            <div class="flex shrink-0 items-center gap-3">
+    <div class="bg-secondary text-[13.5px] text-secondary-300">
+        <div class="mx-auto flex h-10 max-w-7xl items-center justify-between gap-4 px-5 md:px-8">
+            <span class="min-w-0 truncate">{{ auth()->user()->name }}</span>
+
+            <div class="flex flex-none items-center gap-x-6">
                 <a href="{{ route('profile.edit') }}" class="text-secondary-200 transition-colors hover:text-ink-inverse">
                     Profiel
                 </a>
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit"
-                            class="rounded border border-secondary-600 px-2 py-0.5 text-secondary-100 transition-colors hover:border-secondary-400 hover:text-ink-inverse">
+                    <button type="submit" class="text-secondary-200 transition-colors hover:text-ink-inverse">
                         Uitloggen
                     </button>
                 </form>
@@ -29,79 +33,84 @@
         </div>
     </div>
 
-    <div class="p-2" x-data="{ open: false }" x-on:keydown.escape.window="open = false">
-        <div class="mx-auto max-w-7xl">
-            <div class="flex items-center justify-between gap-4 rounded-full border border-line bg-white/70 p-1.5 pl-5 backdrop-blur-xl">
-                <a href="{{ route('home') }}" class="shrink-0">
-                    <img src="{{ asset('images/logo.png') }}"
-                         srcset="{{ asset('images/logo.png') }} 1x, {{ asset('images/logo@2x.png') }} 2x"
-                         alt="Spoorwegen Veldonia" class="h-12 w-auto sm:h-16">
-                </a>
+    <header class="relative transition-all duration-200"
+            x-bind:class="scrolled ? 'bg-transparent px-3 py-2.5 md:px-5 md:py-3' : 'bg-surface'">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5 transition-all duration-200 md:min-h-[88px] md:px-8"
+             x-bind:class="scrolled ? 'rounded-full border border-line bg-surface/90 backdrop-blur-md md:min-h-[68px] md:px-6' : ''">
 
-                <nav class="hidden items-center gap-1 text-sm lg:flex" aria-label="Hoofdnavigatie">
-                    @foreach ($navigatie as $item)
-                        <a href="{{ route($item['route']) }}"
-                           @class([
-                               'rounded-full px-4 py-2.5 transition-colors',
-                               'bg-primary-50 font-medium text-primary' => request()->routeIs($item['actief']),
-                               'text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
-                           ])
-                           @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
-                            {{ $item['label'] }}
-                        </a>
-                    @endforeach
+            <a href="{{ route('home') }}" class="block flex-none">
+                <img src="{{ asset('images/logo.png') }}"
+                     srcset="{{ asset('images/logo.png') }} 1x, {{ asset('images/logo@2x.png') }} 2x"
+                     alt="Spoorwegen Veldonia"
+                     class="block w-auto transition-all duration-200"
+                     x-bind:class="scrolled ? 'h-8' : 'h-9 md:h-[46px]'">
+            </a>
 
-                    <a href="{{ route($knop['route']) }}"
-                       @class([
-                           'rounded-full px-5 py-2.5 font-medium text-ink-inverse transition-colors',
-                           'bg-primary-800' => request()->routeIs($knop['actief']),
-                           'bg-primary hover:bg-primary-600' => ! request()->routeIs($knop['actief']),
-                       ])
-                       @if (request()->routeIs($knop['actief'])) aria-current="page" @endif>
-                        {{ $knop['label'] }}
-                    </a>
-                </nav>
-
-                <button type="button"
-                        x-on:click="open = ! open"
-                        x-bind:aria-expanded="open"
-                        aria-label="Menu"
-                        class="rounded-full bg-primary p-3 text-ink-inverse transition-colors hover:bg-primary-600 lg:hidden">
-                    <svg x-show="! open" class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <path d="M3 6h14"/>
-                        <path d="M3 10h14"/>
-                        <path d="M3 14h14"/>
-                    </svg>
-                    <svg x-show="open" x-cloak class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <path d="M5 5l10 10"/>
-                        <path d="M15 5L5 15"/>
-                    </svg>
-                </button>
-            </div>
-
-            <nav x-show="open" x-cloak x-on:click.outside="open = false"
-                 class="mt-2 space-y-1 rounded-2xl border border-line bg-surface p-2 text-sm lg:hidden"
-                 aria-label="Mobiele navigatie">
+            <nav class="hidden min-w-0 flex-1 items-center justify-center gap-x-7 text-[15.5px] font-semibold lg:flex"
+                 aria-label="Hoofdmenu">
                 @foreach ($navigatie as $item)
                     <a href="{{ route($item['route']) }}"
                        @class([
-                           'block rounded-xl px-4 py-3 transition-colors',
-                           'bg-primary-50 font-medium text-primary' => request()->routeIs($item['actief']),
-                           'text-ink-muted hover:bg-surface-muted hover:text-ink' => ! request()->routeIs($item['actief']),
-                       ])>
+                           'relative whitespace-nowrap transition-colors',
+                           'text-ink after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-primary' => request()->routeIs($item['actief']),
+                           'text-ink-muted hover:text-primary' => ! request()->routeIs($item['actief']),
+                       ])
+                       @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
                         {{ $item['label'] }}
                     </a>
                 @endforeach
-
-                <a href="{{ route($knop['route']) }}"
-                   @class([
-                       'block rounded-full px-3 py-6 text-center font-medium text-ink-inverse transition-colors',
-                       'bg-primary-800' => request()->routeIs($knop['actief']),
-                       'bg-primary hover:bg-primary-600' => ! request()->routeIs($knop['actief']),
-                   ])>
-                    {{ $knop['label'] }}
-                </a>
             </nav>
+
+            <a href="{{ route($cta['route']) }}"
+               @class([
+                   'hidden flex-none items-center gap-3 whitespace-nowrap rounded-full px-6 py-3.5 text-[15px] font-semibold text-ink-inverse transition-colors lg:inline-flex',
+                   'bg-primary-800' => request()->routeIs($cta['actief']),
+                   'bg-primary hover:bg-primary-800' => ! request()->routeIs($cta['actief']),
+               ])>
+                {{ $cta['label'] }}
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <button type="button"
+                    x-on:click="open = ! open"
+                    x-bind:aria-expanded="open"
+                    aria-controls="mobiel-menu"
+                    class="flex flex-none cursor-pointer flex-col gap-[5px] border-0 bg-transparent p-2 lg:hidden">
+                <span class="sr-only">Menu</span>
+                <span class="block h-0.5 w-6 bg-secondary transition-transform duration-200"
+                      x-bind:class="open ? 'translate-y-[7px] rotate-45' : ''"></span>
+                <span class="block h-0.5 w-6 bg-secondary transition-opacity duration-200"
+                      x-bind:class="open ? 'opacity-0' : ''"></span>
+                <span class="block h-0.5 w-6 bg-secondary transition-transform duration-200"
+                      x-bind:class="open ? '-translate-y-[7px] -rotate-45' : ''"></span>
+            </button>
         </div>
-    </div>
-</header>
+
+        <div id="mobiel-menu"
+             x-show="open"
+             x-cloak
+             x-transition.opacity.duration.200ms
+             x-on:click.outside="open = false"
+             class="absolute inset-x-3 top-full z-40 mt-2 overflow-hidden rounded-2xl border border-line bg-surface p-2 lg:hidden">
+
+            @foreach ($navigatie as $item)
+                <a href="{{ route($item['route']) }}"
+                   @class([
+                       'block rounded-xl px-4 py-3 font-semibold transition-colors',
+                       'bg-primary-50 text-primary' => request()->routeIs($item['actief']),
+                       'text-ink-muted hover:bg-surface-muted hover:text-ink' => ! request()->routeIs($item['actief']),
+                   ])>
+                    {{ $item['label'] }}
+                </a>
+            @endforeach
+
+            <div class="mt-2 border-t border-line pt-2">
+                <a href="{{ route($cta['route']) }}"
+                   class="flex w-full items-center justify-center gap-3 rounded-full bg-primary px-6 py-3.5 font-semibold text-ink-inverse transition-colors hover:bg-primary-800">
+                    {{ $cta['label'] }}
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </header>
+</div>
