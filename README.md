@@ -82,7 +82,7 @@ Overige afspraken:
 | Container | `mx-auto max-w-7xl px-4 sm:px-6` |
 | Scheiding | Randen en vlakken, **geen** `shadow-*` |
 | Typografie | Normale schrijfwijze, **geen** `uppercase` |
-| Randen | `rounded` voor knoppen en velden |
+| Randen | `rounded-lg` voor knoppen en velden, `rounded-xl` voor panelen |
 | Interactie | `transition-colors` bij hover, active state met een onderrand van 2px |
 
 ### Layout
@@ -95,7 +95,7 @@ Overige afspraken:
 | `resources/views/partials/header.blade.php` | Sticky header met navigatie en active state |
 | `resources/views/partials/footer.blade.php` | Footer |
 | `resources/brand/` | Bronbestanden van het logo |
-| `public/images/` | Logo als PNG (`logo.png`, `logo-light.png`, `@2x`-varianten) |
+| `public/images/` | Logo en netwerkkaart als PNG (met `@2x`-varianten) |
 
 Elke nieuwe pagina begint met `@extends('layouts.app')` en vult `@section('title')` en `@section('content')`.
 

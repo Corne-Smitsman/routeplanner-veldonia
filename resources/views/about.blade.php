@@ -41,6 +41,16 @@
                         van Duinzicht naar Zonnedal wil, moet minstens twee keer overstappen. Daarom telt
                         niet alleen de rijtijd, maar ook hoe goed de treinen op elkaar aansluiten.
                     </p>
+
+                    <figure class="mt-6 rounded-xl border border-line p-5 sm:p-6">
+                        <img src="{{ asset('images/netwerkkaart.png') }}"
+                             srcset="{{ asset('images/netwerkkaart.png') }} 1x, {{ asset('images/netwerkkaart@2x.png') }} 2x"
+                             alt="Kaart van het spoornetwerk van Veldonia met tien steden en vijftien verbindingen"
+                             class="h-auto w-full">
+                        <figcaption class="mt-4 border-t border-line pt-4 text-sm text-ink-soft">
+                            Het spoornetwerk van Veldonia. Velburg is met vijf lijnen het knooppunt.
+                        </figcaption>
+                    </figure>
                 </section>
 
                 <section>
@@ -55,7 +65,7 @@
             </div>
 
             <aside>
-                <div class="rounded border border-line">
+                <div class="rounded-xl border border-line">
                     <div class="border-b border-line px-5 py-3.5">
                         <h2 class="font-semibold text-ink">Veldonia in cijfers</h2>
                     </div>

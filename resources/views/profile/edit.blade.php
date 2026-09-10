@@ -11,15 +11,15 @@
     </div>
 
     <div class="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:px-6">
-        <section class="rounded border border-line">
+        <section class="rounded-xl border border-line">
             @include('profile.partials.update-profile-information-form')
         </section>
 
-        <section class="rounded border border-line">
+        <section class="rounded-xl border border-line">
             @include('profile.partials.update-password-form')
         </section>
 
-        <section class="rounded border border-secondary-500">
+        <section class="rounded-xl border border-secondary-500">
             @include('profile.partials.delete-user-form')
         </section>
     </div>

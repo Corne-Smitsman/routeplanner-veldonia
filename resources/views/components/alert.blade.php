@@ -7,6 +7,6 @@
     ][$type] ?? 'border-line-strong bg-surface-muted text-ink';
 @endphp
 
-<div {{ $attributes->merge(['class' => "rounded border px-4 py-3 text-sm $styles"]) }} role="alert">
+<div {{ $attributes->merge(['class' => "rounded-lg border px-4 py-3 text-sm $styles"]) }} role="alert">
     {{ $slot }}
 </div>
