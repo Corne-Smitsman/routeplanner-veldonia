@@ -3,36 +3,27 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateStationRequest extends FormRequest
 {
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
 
-    protected function prepareForValidation(): void
+    public function rules()
     {
-        if ($this->filled('code')) {
-            $this->merge(['code' => strtoupper(trim($this->input('code')))]);
-        }
-    }
+        $station = $this->route('station');
 
-    public function rules(): array
-    {
         return [
-            'code' => [
-                'required', 'string', 'size:3', 'alpha',
-                Rule::unique('stations', 'code')->ignore($this->route('station')),
-            ],
-            'name' => ['required', 'string', 'max:255'],
-            'region' => ['required', 'string', 'max:255'],
-            'population' => ['required', 'integer', 'min:0', 'max:100000000'],
+            'code' => 'required|alpha|size:3|uppercase|unique:stations,code,' . $station->id,
+            'name' => 'required|max:255',
+            'region' => 'required|max:255',
+            'population' => 'required|integer|min:0',
         ];
     }
 
-    public function attributes(): array
+    public function attributes()
     {
         return [
             'code' => 'De stationscode',
@@ -42,11 +33,12 @@ class UpdateStationRequest extends FormRequest
         ];
     }
 
-    public function messages(): array
+    public function messages()
     {
         return [
             'code.size' => 'De stationscode bestaat uit precies 3 letters.',
             'code.alpha' => 'De stationscode mag alleen letters bevatten.',
+            'code.uppercase' => 'Gebruik hoofdletters voor de stationscode.',
             'code.unique' => 'Deze stationscode is al in gebruik.',
         ];
     }

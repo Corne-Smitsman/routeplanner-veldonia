@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl" class="h-full">
+<html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,10 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite('resources/css/app.css')
 </head>
-<body class="flex h-full flex-col bg-surface text-ink antialiased">
+<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
 
-<header class="border-b-4 border-primary bg-secondary">
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+<header class="px-3 pt-3 sm:px-6 sm:pt-6">
+    <div class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 rounded-2xl bg-secondary px-5 py-4">
         <img src="{{ asset('images/logo-light.png') }}"
              srcset="{{ asset('images/logo-light.png') }} 1x, {{ asset('images/logo-light@2x.png') }} 2x"
              alt="Spoorwegen Veldonia" class="h-9 w-auto sm:h-10">
@@ -30,8 +30,8 @@
     </div>
 </header>
 
-<main class="flex flex-1 items-center">
-    <div class="mx-auto w-full min-w-0 max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+<main class="flex flex-1 items-center px-3 py-8 sm:px-6">
+    <div class="mx-auto w-full min-w-0 max-w-7xl px-2 py-8 sm:px-4">
         <div class="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
 
             <div class="min-w-0">
@@ -92,8 +92,8 @@
     </div>
 </main>
 
-<footer class="border-t border-line bg-surface-muted">
-    <div class="mx-auto flex max-w-6xl flex-col gap-1.5 px-4 py-6 text-xs text-ink-soft sm:flex-row sm:justify-between sm:px-6">
+<footer class="px-3 pb-3 sm:px-6 sm:pb-6">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-1.5 rounded-2xl bg-secondary px-5 py-5 text-xs text-secondary-400 sm:flex-row sm:justify-between">
         <p>&copy; {{ date('Y') }} Spoorwegen Veldonia</p>
         <p>Veldonia is een fictief land — schoolopdracht Software Development 3</p>
     </div>

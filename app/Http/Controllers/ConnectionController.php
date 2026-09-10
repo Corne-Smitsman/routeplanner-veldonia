@@ -6,71 +6,61 @@ use App\Http\Requests\StoreConnectionRequest;
 use App\Http\Requests\UpdateConnectionRequest;
 use App\Models\Connection;
 use App\Models\Station;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\View\View;
 
 class ConnectionController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        $connections = Connection::with(['fromStation', 'toStation'])
-            ->join('stations', 'stations.id', '=', 'connections.from_station_id')
-            ->orderBy('stations.name')
-            ->select('connections.*')
+        $connections = Connection::with('fromStation', 'toStation')
+            ->orderBy('from_station_id')
             ->get();
 
-        return view('connections.index', compact('connections'));
+        return view('connections.index', ['connections' => $connections]);
     }
 
-    public function create(): View
+    public function create()
     {
-        return view('connections.create', ['stations' => $this->stations()]);
+        $stations = Station::orderBy('name')->get();
+
+        return view('connections.create', ['stations' => $stations]);
     }
 
-    public function store(StoreConnectionRequest $request): RedirectResponse
+    public function store(StoreConnectionRequest $request)
     {
         Connection::create($request->validated());
 
-        return redirect()
-            ->route('connections.index')
+        return redirect()->route('connections.index')
             ->with('success', 'De verbinding is toegevoegd.');
     }
 
-    public function edit(Connection $connection): View
+    public function edit(Connection $connection)
     {
+        $stations = Station::orderBy('name')->get();
+
         return view('connections.edit', [
             'connection' => $connection,
-            'stations' => $this->stations(),
+            'stations' => $stations,
         ]);
     }
 
-    public function update(UpdateConnectionRequest $request, Connection $connection): RedirectResponse
+    public function update(UpdateConnectionRequest $request, Connection $connection)
     {
         $connection->update($request->validated());
 
-        return redirect()
-            ->route('connections.index')
+        return redirect()->route('connections.index')
             ->with('success', 'De verbinding is bijgewerkt.');
     }
 
-    public function confirmDestroy(Connection $connection): View
+    public function confirmDestroy(Connection $connection)
     {
-        $connection->load(['fromStation', 'toStation']);
-
-        return view('connections.delete', compact('connection'));
+        return view('connections.delete', ['connection' => $connection]);
     }
 
-    public function destroy(Connection $connection): RedirectResponse
+    public function destroy(Connection $connection)
     {
         $connection->delete();
 
-        return redirect()
-            ->route('connections.index')
+        return redirect()->route('connections.index')
             ->with('success', 'De verbinding is verwijderd.');
-    }
-
-    private function stations()
-    {
-        return Station::orderBy('name')->get();
     }
 }

@@ -2,25 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Station extends Model
 {
-    /** @use HasFactory<\Database\Factories\StationFactory> */
-    use HasFactory;
-
-    protected $fillable = [
-        'code',
-        'name',
-        'region',
-        'population',
-    ];
-
-    protected function casts(): array
-    {
-        return [
-            'population' => 'integer',
-        ];
-    }
+    protected $fillable = ['code', 'name', 'region', 'population'];
 }

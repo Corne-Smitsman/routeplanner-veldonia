@@ -3,30 +3,25 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class StoreConnectionRequest extends FormRequest
 {
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
 
-    public function rules(): array
+    public function rules()
     {
         return [
-            'from_station_id' => [
-                'required', 'integer', 'exists:stations,id',
-                Rule::unique('connections', 'from_station_id')
-                    ->where('to_station_id', $this->input('to_station_id')),
-            ],
-            'to_station_id' => ['required', 'integer', 'exists:stations,id', 'different:from_station_id'],
-            'distance_km' => ['required', 'integer', 'min:1', 'max:10000'],
-            'duration_minutes' => ['required', 'integer', 'min:1', 'max:10000'],
+            'from_station_id' => 'required|exists:stations,id',
+            'to_station_id' => 'required|exists:stations,id|different:from_station_id',
+            'distance_km' => 'required|integer|min:1',
+            'duration_minutes' => 'required|integer|min:1',
         ];
     }
 
-    public function attributes(): array
+    public function attributes()
     {
         return [
             'from_station_id' => 'Het vertrekstation',
@@ -36,11 +31,10 @@ class StoreConnectionRequest extends FormRequest
         ];
     }
 
-    public function messages(): array
+    public function messages()
     {
         return [
             'to_station_id.different' => 'Het vertrek- en aankomststation mogen niet hetzelfde zijn.',
-            'from_station_id.unique' => 'Deze verbinding bestaat al.',
         ];
     }
 }

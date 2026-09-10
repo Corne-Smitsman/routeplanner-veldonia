@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
-
-/**
- * Welkomstscherm — de toegangspoort tot de applicatie.
- */
 class WelcomeController extends Controller
 {
-    /**
-     * Toont het welkomstscherm, of stuurt een ingelogde gebruiker door.
-     */
-    public function __invoke(): View|RedirectResponse
+    public function index()
     {
-        if (Auth::check()) {
+        if (auth()->check()) {
             return redirect()->route('home');
         }
 
