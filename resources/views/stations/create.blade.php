@@ -3,7 +3,7 @@
 @section('title', 'Stad toevoegen')
 
 @section('content')
-    <div class="bg-surface">
+    <div class="bg-surface-muted">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Steden', 'url' => route('stations.index')], ['label' => 'Stad toevoegen']]"/>
 
