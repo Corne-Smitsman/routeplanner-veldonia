@@ -2,64 +2,75 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreConnectionRequest;
+use App\Http\Requests\UpdateConnectionRequest;
 use App\Models\Connection;
-use Illuminate\Http\Request;
+use App\Models\Station;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class ConnectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(): View
     {
-        //
+        $connections = Connection::with(['fromStation', 'toStation'])
+            ->join('stations', 'stations.id', '=', 'connections.from_station_id')
+            ->orderBy('stations.name')
+            ->select('connections.*')
+            ->get();
+
+        return view('connections.index', compact('connections'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('connections.create', ['stations' => $this->stations()]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreConnectionRequest $request): RedirectResponse
     {
-        //
+        Connection::create($request->validated());
+
+        return redirect()
+            ->route('connections.index')
+            ->with('success', 'De verbinding is toegevoegd.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Connection $connection)
+    public function edit(Connection $connection): View
     {
-        //
+        return view('connections.edit', [
+            'connection' => $connection,
+            'stations' => $this->stations(),
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Connection $connection)
+    public function update(UpdateConnectionRequest $request, Connection $connection): RedirectResponse
     {
-        //
+        $connection->update($request->validated());
+
+        return redirect()
+            ->route('connections.index')
+            ->with('success', 'De verbinding is bijgewerkt.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Connection $connection)
+    public function confirmDestroy(Connection $connection): View
     {
-        //
+        $connection->load(['fromStation', 'toStation']);
+
+        return view('connections.delete', compact('connection'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Connection $connection)
+    public function destroy(Connection $connection): RedirectResponse
     {
-        //
+        $connection->delete();
+
+        return redirect()
+            ->route('connections.index')
+            ->with('success', 'De verbinding is verwijderd.');
+    }
+
+    private function stations()
+    {
+        return Station::orderBy('name')->get();
     }
 }

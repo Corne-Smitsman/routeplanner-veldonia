@@ -51,3 +51,26 @@
     --color-ink-soft: #878d97;
     --color-ink-inverse: #ffffff;
 }
+
+@layer base {
+    html {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    button:not(:disabled),
+    [role="button"]:not(:disabled),
+    summary {
+        cursor: pointer;
+    }
+
+    button:disabled,
+    [aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+}

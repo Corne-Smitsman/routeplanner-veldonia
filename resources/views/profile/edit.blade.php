@@ -5,6 +5,8 @@
 @section('content')
     <div class="border-b border-line bg-surface-muted">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+            <x-breadcrumbs :items="[['label' => 'Mijn profiel']]"/>
+
             <h1 class="text-2xl font-semibold text-ink">Mijn profiel</h1>
             <p class="mt-1.5 text-ink-muted">Beheer je gegevens, wachtwoord en account.</p>
         </div>

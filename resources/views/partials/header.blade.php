@@ -1,9 +1,8 @@
 @php
     $navigatie = [
-        ['label' => 'Reisplanner',  'route' => null],
-        ['label' => 'Steden',       'route' => null],
-        ['label' => 'Verbindingen', 'route' => null],
-        ['label' => 'Over Veldonia','route' => 'about'],
+        ['label' => 'Steden',       'route' => 'stations.index',    'actief' => 'stations.*'],
+        ['label' => 'Verbindingen', 'route' => 'connections.index', 'actief' => 'connections.*'],
+        ['label' => 'Over Veldonia','route' => 'about',             'actief' => 'about'],
     ];
 @endphp
 
@@ -44,10 +43,10 @@
                     <a href="{{ route($item['route']) }}"
                        @class([
                            'inline-flex shrink-0 items-center border-b-2 px-3 py-3 transition-colors',
-                           'border-primary font-medium text-ink' => request()->routeIs($item['route']),
-                           'border-transparent text-ink-muted hover:text-ink' => ! request()->routeIs($item['route']),
+                           'border-primary font-medium text-ink' => request()->routeIs($item['actief']),
+                           'border-transparent text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
                        ])
-                       @if(request()->routeIs($item['route'])) aria-current="page" @endif>{{ $item['label'] }}</a>
+                       @if(request()->routeIs($item['actief'])) aria-current="page" @endif>{{ $item['label'] }}</a>
                 @else
                     <span class="inline-flex shrink-0 cursor-not-allowed items-center border-b-2 border-transparent px-3 py-3 text-ink-soft"
                           title="Binnenkort beschikbaar">{{ $item['label'] }}</span>

@@ -15,14 +15,14 @@ Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md
 - [x] 1.4 Seeder connections
 
 ## Fase 2 — CRUD-basis (8 uur)
-- [ ] 2.1 Overzicht van steden
-- [ ] 2.2 Detailpagina van een station
-- [ ] 2.3 Station toevoegen
-- [ ] 2.4 Station bewerken
-- [ ] 2.5 Station verwijderen
-- [ ] 2.6 Overzicht van verbindingen
-- [ ] 2.7 Verbinding toevoegen
-- [ ] 2.8 Verbinding bewerken/verwijderen
+- [x] 2.1 Overzicht van steden
+- [x] 2.2 Detailpagina van een station
+- [x] 2.3 Station toevoegen
+- [x] 2.4 Station bewerken
+- [x] 2.5 Station verwijderen
+- [x] 2.6 Overzicht van verbindingen
+- [x] 2.7 Verbinding toevoegen
+- [x] 2.8 Verbinding bewerken/verwijderen
 
 ## Fase 3 — Eloquent-relaties (4 uur)
 - [ ] 3.1 Relaties tussen Station en Connection

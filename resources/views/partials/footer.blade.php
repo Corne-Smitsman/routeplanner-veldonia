@@ -24,8 +24,8 @@
             <div>
                 <h2 class="text-sm font-semibold text-ink">Het netwerk</h2>
                 <ul class="mt-3 space-y-2 text-sm">
-                    <li><span class="text-ink-soft" title="Binnenkort beschikbaar">Steden</span></li>
-                    <li><span class="text-ink-soft" title="Binnenkort beschikbaar">Verbindingen</span></li>
+                    <li><a href="{{ route('stations.index') }}" class="text-ink-muted transition-colors hover:text-ink">Steden</a></li>
+                    <li><a href="{{ route('connections.index') }}" class="text-ink-muted transition-colors hover:text-ink">Verbindingen</a></li>
                     <li><a href="{{ route('about') }}" class="text-ink-muted transition-colors hover:text-ink">Over Veldonia</a></li>
                 </ul>
             </div>

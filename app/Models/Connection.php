@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Connection extends Model
 {
@@ -23,5 +24,15 @@ class Connection extends Model
             'distance_km' => 'integer',
             'duration_minutes' => 'integer',
         ];
+    }
+
+    public function fromStation(): BelongsTo
+    {
+        return $this->belongsTo(Station::class, 'from_station_id');
+    }
+
+    public function toStation(): BelongsTo
+    {
+        return $this->belongsTo(Station::class, 'to_station_id');
     }
 }

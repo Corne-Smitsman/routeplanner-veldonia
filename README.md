@@ -62,6 +62,11 @@ npm run build   # voor oplevering
 Elke view laadt de stylesheet met `@vite('resources/css/app.css')`.
 Vanaf user story 0.3 gebeurt dat één keer centraal in de masterlayout.
 
+### Taal
+
+De applicatie staat op `APP_LOCALE=nl`. De Nederlandse teksten voor validatie,
+inloggen en paginering staan in `lang/nl/`.
+
 ### Huisstijl
 
 Rustig en clean, zonder opsmuk. Alle kleuren staan als eigen term in `resources/css/app.css`
@@ -100,6 +105,7 @@ Overige afspraken:
 | `resources/views/partials/footer.blade.php` | Footer |
 | `resources/brand/` | Bronbestanden van het logo |
 | `public/images/` | Logo en netwerkkaart als PNG (met `@2x`-varianten) |
+| `resources/views/components/breadcrumbs.blade.php` | Kruimelpad, aangeroepen met een array van labels en urls |
 
 Elke nieuwe pagina begint met `@extends('layouts.app')` en vult `@section('title')` en `@section('content')`.
 
