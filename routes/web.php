@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -10,12 +11,10 @@ use Illuminate\Support\Facades\Route;
 | bestand (user story 0.2): een route wijst altijd naar een controllermethode.
 */
 
-// Tijdelijke placeholder — verwijderen zodra user story 0.2 klaar is.
-Route::view('/', 'welcome');
+// FASE 0 — MVC-basis
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*
-| FASE 0 — MVC-basis
-| TODO 0.2  GET  /                 -> HomeController@index          (name: home)
 | TODO 0.4  GET  /over-veldonia    -> PageController@about          (name: about)
 |
 | FASE 2 — CRUD steden en verbindingen

@@ -3,8 +3,8 @@
 Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md`.
 
 ## Fase 0 — MVC-basis en projectopzet (4 uur)
-- [ ] 0.1 Project opzetten
-- [ ] 0.2 Eerste route, controller en view
+- [x] 0.1 Project opzetten
+- [x] 0.2 Eerste route, controller en view
 - [ ] 0.3 Masterlayout met navigatie
 - [ ] 0.4 Statische informatiepagina
 

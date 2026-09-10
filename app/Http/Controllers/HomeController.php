@@ -1,15 +1,19 @@
 <?php
 
-/**
- * User story 0.2 — Homepage
- * TODO: index() retourneert de view 'home' met 'Welkom bij Spoorwegen Veldonia'.
- */
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
+/**
+ * User story 0.2 — Homepage
+ */
 class HomeController extends Controller
 {
-    //
+    /**
+     * Toont de homepage van Spoorwegen Veldonia.
+     */
+    public function index(): View
+    {
+        return view('home');
+    }
 }
