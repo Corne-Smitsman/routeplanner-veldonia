@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 6.5 — Migratie reisgeschiedenis
- * TODO: user_id, van-station, naar-station, gezochte vertrektijd en tijdstip van zoeken.
- */
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

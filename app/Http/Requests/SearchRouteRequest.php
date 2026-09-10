@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 4.2 — Validatie zoekopdracht
- * TODO: beide stations bestaan, van != naar, geldige vertrektijd.
- */
-
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;

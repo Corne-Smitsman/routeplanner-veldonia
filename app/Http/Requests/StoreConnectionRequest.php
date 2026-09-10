@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 2.7 — Validatie nieuwe verbinding
- * TODO: bestaande stations, van-stad != naar-stad, afstand en rijtijd numeriek.
- */
-
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;

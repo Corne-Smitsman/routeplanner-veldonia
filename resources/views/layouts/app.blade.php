@@ -1,19 +1,30 @@
-{{-- User story 0.3 — Masterlayout --}}
 <!doctype html>
 <html lang="nl" class="h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Welkom') · Spoorwegen Veldonia</title>
-    <meta name="description" content="@yield('description', 'Plan je reis door de tien steden van Veldonia.')">
-    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
-    @vite('resources/css/app.css')
+    <title>@yield('title', 'Home') · Spoorwegen Veldonia</title>
+    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex h-full flex-col bg-white text-rail-800 antialiased">
+<body class="flex h-full flex-col bg-surface text-ink antialiased">
 
 @include('partials.header')
 
 <main class="flex-1">
+    @if (session('status') || session('success'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <x-alert>{{ session('status') ?? session('success') }}</x-alert>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <x-alert type="error">{{ session('error') }}</x-alert>
+        </div>
+    @endif
+
     @yield('content')
 </main>
 

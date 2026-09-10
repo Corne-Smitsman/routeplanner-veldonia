@@ -1,11 +1,5 @@
 <?php
 
-/**
- * User stories 6.2 t/m 6.4 — Favorieten
- * TODO 6.2 store, 6.3 index (alleen eigen favorieten), 6.4 destroy.
- * TODO 7.4: dwing de FavoritePolicy af in elke actie.
- */
-
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;

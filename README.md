@@ -60,29 +60,49 @@ Vanaf user story 0.3 gebeurt dat één keer centraal in de masterlayout.
 
 ### Huisstijl
 
-Rustig en clean, zonder opsmuk. Houd je in alle nieuwe views aan deze regels:
+Rustig en clean, zonder opsmuk. Alle kleuren staan als eigen term in `resources/css/app.css`
+en worden in Tailwind gebruikt als `bg-primary`, `text-ink`, `border-line`, enzovoort.
+
+| Term | Waarde | Gebruik |
+|---|---|---|
+| `primary` (+ `50`–`900`) | `#12324f` | Merkkleur: koptekstbalk, accenten |
+| `secondary` (+ `50`–`700`) | `#a63a2e` | Actieknoppen, active state, waarschuwingen |
+| `surface` | `#ffffff` | Standaard paginavlak |
+| `surface-muted` | `#f3f7fa` | Rustig vlak, paginakoppen |
+| `surface-dark` | `#16385a` | Vlak op donkere achtergrond |
+| `line` / `line-strong` | `#c6dae8` / `#9dbdd6` | Randen en scheidingslijnen |
+| `line-dark` | `#1c4468` | Rand op donkere achtergrond |
+| `ink` / `ink-muted` / `ink-soft` | `#12324f` / `#345d82` / `#6b98bb` | Tekst: normaal, gedempt, subtiel |
+| `ink-inverse` | `#ffffff` | Tekst op donkere achtergrond |
+
+Overige afspraken:
 
 | Onderdeel | Afspraak |
 |---|---|
-| Container | `mx-auto max-w-7xl px-6` — alle pagina's dezelfde breedte en marges |
-| Kleuren | Alleen het `rail`-palet uit `resources/css/app.css` (`rail-50` t/m `rail-900`) |
-| Scheiding | Randen (`border-rail-200`) en vlakken, **geen** `shadow-*` |
-| Typografie | Normale schrijfwijze, **geen** `uppercase` of `tracking-wide` |
-| Koppen | `font-semibold text-rail-900`, tekst `text-rail-600` |
-| Randen | `rounded-md` voor knoppen, `rounded-lg` voor kaders |
+| Container | `mx-auto max-w-7xl px-4 sm:px-6` |
+| Scheiding | Randen en vlakken, **geen** `shadow-*` |
+| Typografie | Normale schrijfwijze, **geen** `uppercase` |
+| Randen | `rounded` voor knoppen en velden |
 | Interactie | `transition-colors` bij hover, active state met een onderrand van 2px |
 
 ### Layout
 
 | Bestand | Rol |
 |---|---|
-| `resources/views/layouts/app.blade.php` | Masterlayout met `@yield('content')` |
+| `resources/views/layouts/app.blade.php` | Masterlayout voor ingelogde gebruikers |
+| `resources/views/layouts/guest.blade.php` | Layout voor inloggen en registreren |
+| `resources/views/welcome.blade.php` | Welkomstscherm (enige publieke pagina) |
 | `resources/views/partials/header.blade.php` | Sticky header met navigatie en active state |
 | `resources/views/partials/footer.blade.php` | Footer |
-| `resources/views/partials/logo.blade.php` | Beeldmerk (SVG), herbruikbaar via `@include` |
-| `public/favicon.svg` | Favicon met hetzelfde beeldmerk |
+| `resources/brand/` | Bronbestanden van het logo |
+| `public/images/` | Logo als PNG (`logo.png`, `logo-light.png`, `@2x`-varianten) |
 
 Elke nieuwe pagina begint met `@extends('layouts.app')` en vult `@section('title')` en `@section('content')`.
+
+## Toegang
+
+Het welkomstscherm op `/` is de enige pagina die zonder account te bereiken is. Al het
+overige zit achter de `auth`-middleware; wie niet is ingelogd komt op het inlogscherm uit.
 
 ## Testaccounts
 
@@ -90,8 +110,9 @@ Vul dit in zodra de seeder uit user story 5.4 klaar is.
 
 | Rol | E-mail | Wachtwoord |
 |---|---|---|
-| beheerder | *(nog invullen)* | *(nog invullen)* |
-| reiziger | *(nog invullen)* | *(nog invullen)* |
+| — | test@veldonia.nl | wachtwoord |
+
+Rollen (reiziger en beheerder) volgen in een latere fase.
 
 ## Geïmplementeerde user stories
 

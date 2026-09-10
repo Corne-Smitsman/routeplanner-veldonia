@@ -1,11 +1,5 @@
 <?php
 
-/**
- * User story 1.3 — Migratie connections
- * TODO: from_station_id en to_station_id als foreign key naar stations,
- *       plus distance_km en duration_minutes.
- */
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

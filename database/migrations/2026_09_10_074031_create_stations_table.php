@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 1.1 — Migratie stations
- * TODO: kolommen code, name, region, population (+ timestamps).
- */
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

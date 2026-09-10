@@ -1,0 +1,26 @@
+@extends('layouts.app')
+
+@section('title', 'Mijn profiel')
+
+@section('content')
+    <div class="border-b border-line bg-surface-muted">
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+            <h1 class="text-2xl font-semibold text-ink">Mijn profiel</h1>
+            <p class="mt-1.5 text-ink-muted">Beheer je gegevens, wachtwoord en account.</p>
+        </div>
+    </div>
+
+    <div class="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:px-6">
+        <section class="rounded border border-line">
+            @include('profile.partials.update-profile-information-form')
+        </section>
+
+        <section class="rounded border border-line">
+            @include('profile.partials.update-password-form')
+        </section>
+
+        <section class="rounded border border-secondary-500">
+            @include('profile.partials.delete-user-form')
+        </section>
+    </div>
+@endsection

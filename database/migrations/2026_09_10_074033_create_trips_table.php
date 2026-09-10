@@ -1,11 +1,5 @@
 <?php
 
-/**
- * User story 3.3 — Migratie trips
- * TODO: connection_id (foreign key), departure_time en arrival_time.
- * TODO 4.10: index op departure_time voor de performance van het algoritme.
- */
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

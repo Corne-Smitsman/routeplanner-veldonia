@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 6.5 — Testdata reisgeschiedenis
- * TODO: wat voorbeeldzoekopdrachten voor demonstratiedoeleinden.
- */
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;

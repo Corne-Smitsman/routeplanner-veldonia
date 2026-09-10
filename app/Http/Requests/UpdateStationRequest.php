@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 2.4 — Validatie bewerken stad
- * TODO: required-regels, unieke code met uitzondering voor het eigen record.
- */
-
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;

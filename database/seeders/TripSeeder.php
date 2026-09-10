@@ -1,11 +1,5 @@
 <?php
 
-/**
- * User story 3.4 — Seeder genereert trips
- * TODO: loop per connection over het tijdvenster en de frequentie uit docs/datamodel.md §2
- *       en genereer per interval een trip (beide richtingen).
- */
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;

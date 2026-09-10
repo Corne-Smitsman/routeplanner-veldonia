@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 2.8 — Validatie bewerken verbinding
- * TODO: zelfde regels als StoreConnectionRequest.
- */
-
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;

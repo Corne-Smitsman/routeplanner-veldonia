@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User stories 7.3 en 7.4 — Policy favorieten
- * TODO: view, update en delete alleen toestaan voor de eigenaar.
- */
-
 namespace App\Policies;
 
 use App\Models\Favorite;

@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 
-/**
- * User story 0.4 — Statische informatiepagina
- */
 class PageController extends Controller
 {
     /**

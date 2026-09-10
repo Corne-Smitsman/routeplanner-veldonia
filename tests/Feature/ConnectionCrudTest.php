@@ -1,9 +1,5 @@
 <?php
 
-/**
- * User story 7.6 — Testscenario's verbindingen
- */
-
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;

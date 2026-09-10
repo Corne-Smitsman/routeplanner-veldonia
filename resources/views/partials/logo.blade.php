@@ -1,4 +1,3 @@
-{{-- Huisstijl — beeldmerk Spoorwegen Veldonia (spoorstaven met dwarsliggers) --}}
 @props(['class' => 'h-9 w-9'])
 
 <svg viewBox="0 0 32 32" class="{{ $class }}" role="img" aria-label="Spoorwegen Veldonia">

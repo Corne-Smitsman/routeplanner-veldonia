@@ -1,9 +1,5 @@
 <?php
 
-/**
- * User story 7.4 — Gebruiker A mag favoriet van B niet verwijderen
- */
-
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;

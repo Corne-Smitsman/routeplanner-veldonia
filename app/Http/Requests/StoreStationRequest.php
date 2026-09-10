@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 2.3 — Validatie nieuwe stad
- * TODO: required-regels en unieke code.
- */
-
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;

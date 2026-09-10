@@ -1,12 +1,5 @@
 <?php
 
-/**
- * User stories 2.6 t/m 2.8 — CRUD verbindingen
- * TODO 2.6 index met eager loading van fromStation/toStation,
- *      2.7 create/store met dropdowns, 2.8 edit/update/destroy.
- * TODO 7.2: autoriseer met de Gate 'beheer-netwerk'.
- */
-
 namespace App\Http\Controllers;
 
 use App\Models\Connection;

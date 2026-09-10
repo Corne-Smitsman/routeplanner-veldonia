@@ -1,9 +1,5 @@
 <?php
 
-/**
- * User story 7.5 — Beheerder ziet alles, reiziger alleen eigen rijen
- */
-
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;

@@ -7,15 +7,36 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Huisstijl Spoorwegen Veldonia — rustige, gedempte blauwgrijstinten */
-    --color-rail-50: #f4f7fa;
-    --color-rail-100: #e7eef4;
-    --color-rail-200: #cddce8;
-    --color-rail-300: #a7c0d5;
-    --color-rail-400: #7599b8;
-    --color-rail-500: #4f7599;
-    --color-rail-600: #3a5c7c;
-    --color-rail-700: #2c4763;
-    --color-rail-800: #24384e;
-    --color-rail-900: #1b2a3a;
+    --color-primary: #12324f;
+    --color-primary-50: #f3f7fa;
+    --color-primary-100: #e4edf4;
+    --color-primary-200: #c6dae8;
+    --color-primary-300: #9dbdd6;
+    --color-primary-400: #6b98bb;
+    --color-primary-500: #47769e;
+    --color-primary-600: #345d82;
+    --color-primary-700: #1c4468;
+    --color-primary-800: #16385a;
+    --color-primary-900: #12324f;
+
+    --color-secondary: #a63a2e;
+    --color-secondary-50: #fdf4f2;
+    --color-secondary-100: #fae5e1;
+    --color-secondary-200: #f2c7bf;
+    --color-secondary-500: #c04a3c;
+    --color-secondary-600: #a63a2e;
+    --color-secondary-700: #8d3027;
+
+    --color-surface: #ffffff;
+    --color-surface-muted: #f3f7fa;
+    --color-surface-dark: #16385a;
+
+    --color-line: #c6dae8;
+    --color-line-strong: #9dbdd6;
+    --color-line-dark: #1c4468;
+
+    --color-ink: #12324f;
+    --color-ink-muted: #345d82;
+    --color-ink-soft: #6b98bb;
+    --color-ink-inverse: #ffffff;
 }

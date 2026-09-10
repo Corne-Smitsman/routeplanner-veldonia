@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 6.5 — Reisgeschiedenis
- * TODO: belongsTo user en de gezochte stations.
- */
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -43,9 +43,9 @@ Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md
 - [ ] 4.10 Performance-optimalisatie
 
 ## Fase 5 — Authenticatie (4 uur)
-- [ ] 5.1 Registreren en inloggen
-- [ ] 5.2 Ingelogde status in de navigatie
-- [ ] 5.3 Routeplanner alleen voor ingelogde gebruikers
+- [x] 5.1 Registreren en inloggen
+- [x] 5.2 Ingelogde status in de navigatie
+- [x] 5.3 Routeplanner alleen voor ingelogde gebruikers (hele app afgeschermd)
 - [ ] 5.4 Gebruikersrol toevoegen
 
 ## Fase 6 — Persoonlijke functionaliteit (6 uur)

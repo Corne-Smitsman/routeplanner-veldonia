@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 7.5 — Policy reisgeschiedenis
- * TODO: beheerder mag alles zien, reiziger alleen de eigen rijen.
- */
-
 namespace App\Policies;
 
 use App\Models\SearchHistory;

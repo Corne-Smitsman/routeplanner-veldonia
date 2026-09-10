@@ -1,10 +1,5 @@
 <?php
 
-/**
- * User story 5.4 — Gebruikersrol
- * TODO: kolom role toevoegen aan users met default 'reiziger'.
- */
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

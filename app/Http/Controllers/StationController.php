@@ -1,12 +1,5 @@
 <?php
 
-/**
- * User stories 2.1 t/m 2.5 — CRUD steden
- * TODO 2.1 index, 2.2 show (route-model-binding), 2.3 create/store,
- *      2.4 edit/update, 2.5 destroy met bevestiging.
- * TODO 7.2: autoriseer create/edit/delete met de Gate 'beheer-netwerk'.
- */
-
 namespace App\Http\Controllers;
 
 use App\Models\Station;
