@@ -442,7 +442,7 @@ de uitzonderingen en de acceptatiecriteria waaraan je werk getoetst wordt.
 - **Actor**: Bezoeker
 - **HS**: Alle views gebruiken hetzelfde CSS-framework en dezelfde opbouw; de app is bruikbaar op mobiel en desktop.
 - **AC**:
-  - [ ] Eén framework (Bootstrap of Tailwind) consequent toegepast op alle views
+  - [ ] Eén framework consequent toegepast op alle views — **gekozen: Tailwind CSS 4** (via Vite)
   - [ ] Responsief op minimaal mobiele en desktopbreedte
 
 ### UC-8.2 — Consistente foutafhandeling

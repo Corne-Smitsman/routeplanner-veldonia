@@ -45,6 +45,19 @@ php artisan serve --port=8001
 
 De app draait op http://127.0.0.1:8001
 
+## Frontend
+
+Dit project gebruikt **Tailwind CSS 4** via Vite (user story 8.1: één framework, consequent toegepast).
+
+```bash
+npm install
+npm run dev     # tijdens het ontwikkelen (hot reload)
+npm run build   # voor oplevering
+```
+
+Elke view laadt de stylesheet met `@vite('resources/css/app.css')`.
+Vanaf user story 0.3 gebeurt dat één keer centraal in de masterlayout.
+
 ## Testaccounts
 
 Vul dit in zodra de seeder uit user story 5.4 klaar is.
