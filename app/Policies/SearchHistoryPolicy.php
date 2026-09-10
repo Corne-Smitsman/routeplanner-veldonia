@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * User story 7.5 — Policy reisgeschiedenis
+ * TODO: beheerder mag alles zien, reiziger alleen de eigen rijen.
+ */
+
+namespace App\Policies;
+
+use App\Models\SearchHistory;
+use App\Models\User;
+use Illuminate\Auth\Access\Response;
+
+class SearchHistoryPolicy
+{
+    /**
+     * Determine whether the user can view any models.
+     */
+    public function viewAny(User $user): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can view the model.
+     */
+    public function view(User $user, SearchHistory $searchHistory): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can create models.
+     */
+    public function create(User $user): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can update the model.
+     */
+    public function update(User $user, SearchHistory $searchHistory): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     */
+    public function delete(User $user, SearchHistory $searchHistory): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can restore the model.
+     */
+    public function restore(User $user, SearchHistory $searchHistory): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine whether the user can permanently delete the model.
+     */
+    public function forceDelete(User $user, SearchHistory $searchHistory): bool
+    {
+        return false;
+    }
+}
