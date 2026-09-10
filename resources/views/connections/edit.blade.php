@@ -3,7 +3,7 @@
 @section('title', 'Verbinding bewerken')
 
 @section('content')
-    <div class="border-b border-line bg-surface">
+    <div class="bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Verbindingen', 'url' => route('connections.index')], ['label' => 'Bewerken']]"/>
 
