@@ -39,7 +39,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>Opslaan</x-primary-button>
+            <x-button>Opslaan</x-button>
 
             @if (session('status') === 'profile-updated')
                 <p class="text-sm text-ink-muted">Opgeslagen.</p>

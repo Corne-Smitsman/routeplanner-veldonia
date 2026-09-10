@@ -106,6 +106,7 @@ Overige afspraken:
 | `resources/brand/` | Bronbestanden van het logo |
 | `public/images/` | Logo en netwerkkaart als PNG (met `@2x`-varianten) |
 | `resources/views/components/breadcrumbs.blade.php` | Kruimelpad, aangeroepen met een array van labels en urls |
+| `resources/views/components/button.blade.php` | Knop met pijl-animatie; `variant` primary, outline of danger, `href` maakt er een link van, `full` maakt hem volledig breed |
 
 Elke nieuwe pagina begint met `@extends('layouts.app')` en vult `@section('title')` en `@section('content')`.
 

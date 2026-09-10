@@ -35,7 +35,7 @@
             <x-input-error :messages="$errors->get('password_confirmation')"/>
         </div>
 
-        <x-primary-button class="w-full">Account aanmaken</x-primary-button>
+        <x-button class="w-full">Account aanmaken</x-button>
     </form>
 
     <p class="mt-8 border-t border-line pt-6 text-sm text-ink-muted">

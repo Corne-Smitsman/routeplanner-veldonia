@@ -16,6 +16,6 @@
             <x-input-error :messages="$errors->get('password')"/>
         </div>
 
-        <x-primary-button class="w-full">Bevestigen</x-primary-button>
+        <x-button class="w-full">Bevestigen</x-button>
     </form>
 </x-guest-layout>

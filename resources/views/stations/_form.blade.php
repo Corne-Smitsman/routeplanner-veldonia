@@ -30,6 +30,6 @@
 </div>
 
 <div class="flex items-center gap-3 border-t border-line px-5 py-4">
-    <x-primary-button>{{ $submit }}</x-primary-button>
+    <x-button>{{ $submit }}</x-button>
     <a href="{{ $cancel }}" class="text-sm text-ink-muted transition-colors hover:text-ink">Annuleren</a>
 </div>

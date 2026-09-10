@@ -18,6 +18,6 @@
             <x-input-error :messages="$errors->userDeletion->get('password')"/>
         </div>
 
-        <x-danger-button>Account definitief verwijderen</x-danger-button>
+        <x-button variant="danger">Account definitief verwijderen</x-button>
     </form>
 </div>

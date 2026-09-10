@@ -18,7 +18,7 @@
             <x-input-error :messages="$errors->get('email')"/>
         </div>
 
-        <x-primary-button class="w-full">Herstellink versturen</x-primary-button>
+        <x-button class="w-full">Herstellink versturen</x-button>
     </form>
 
     <p class="mt-8 border-t border-line pt-6 text-sm text-ink-muted">

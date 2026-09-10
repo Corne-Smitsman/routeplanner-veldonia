@@ -38,7 +38,7 @@
                      alt="Spoorwegen Veldonia" class="block h-9 w-auto md:h-11">
             </a>
 
-            
+
             <div class="flex flex-none items-center gap-x-7">
                 <nav class="hidden items-center gap-x-7 text-sm lg:flex" aria-label="Hoofdmenu">
                     @foreach ($navigatie as $item)
@@ -54,15 +54,11 @@
                     @endforeach
                 </nav>
 
-                <a href="{{ route($cta['route']) }}"
-                   @class([
-                       'hidden items-center gap-2.5 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium text-ink-inverse transition-colors lg:inline-flex',
-                       'bg-primary-800' => request()->routeIs($cta['actief']),
-                       'bg-primary hover:bg-primary-800' => ! request()->routeIs($cta['actief']),
-                   ])>
-                    {{ $cta['label'] }}
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
+                <div class="hidden lg:block">
+                    <x-button :href="route($cta['route'])">
+                        {{ $cta['label'] }}
+                    </x-button>
+                </div>
 
                 <button type="button"
                         x-on:click="open = ! open"
@@ -95,11 +91,9 @@
             @endforeach
 
             <div class="mt-2 border-t border-line pt-2">
-                <a href="{{ route($cta['route']) }}"
-                   class="flex w-full items-center justify-center gap-2.5 rounded-full bg-primary px-5 py-3 text-sm font-medium text-ink-inverse transition-colors hover:bg-primary-800">
+                <x-button :href="route($cta['route'])" full>
                     {{ $cta['label'] }}
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
+                </x-button>
             </div>
         </div>
     </header>

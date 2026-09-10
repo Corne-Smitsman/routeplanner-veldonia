@@ -5,12 +5,12 @@
 @section('content')
     <div class="bg-surface-muted">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-            <x-breadcrumbs :items="[['label' => 'Over Veldonia']]"/>
+            <x-breadcrumbs :items="[['label' => 'Over Veldonia']]" class="mb-4"/>
 
             <h1 class="text-2xl font-semibold text-ink">Over Veldonia</h1>
             <p class="mt-1.5 max-w-2xl text-ink-muted">
                 Een fictief land met tien steden en een spoornetwerk dat bewust niet overal
-                rechtstreeks is — net als in het echt.
+                rechtstreeks is, net als in het echt.
             </p>
         </div>
     </div>

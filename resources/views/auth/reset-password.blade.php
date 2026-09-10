@@ -28,6 +28,6 @@
             <x-input-error :messages="$errors->get('password_confirmation')"/>
         </div>
 
-        <x-primary-button class="w-full">Wachtwoord opslaan</x-primary-button>
+        <x-button class="w-full">Wachtwoord opslaan</x-button>
     </form>
 </x-guest-layout>

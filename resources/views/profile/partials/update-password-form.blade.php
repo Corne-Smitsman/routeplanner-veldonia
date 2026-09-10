@@ -29,7 +29,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>Wachtwoord opslaan</x-primary-button>
+            <x-button>Wachtwoord opslaan</x-button>
 
             @if (session('status') === 'password-updated')
                 <p class="text-sm text-ink-muted">Opgeslagen.</p>

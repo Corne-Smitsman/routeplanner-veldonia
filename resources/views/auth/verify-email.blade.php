@@ -13,7 +13,7 @@
     <div class="mt-8 flex items-center justify-between gap-4">
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
-            <x-primary-button>Opnieuw versturen</x-primary-button>
+            <x-button>Opnieuw versturen</x-button>
         </form>
 
         <form method="POST" action="{{ route('logout') }}">

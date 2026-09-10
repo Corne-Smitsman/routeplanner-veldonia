@@ -38,7 +38,7 @@
             @endif
         </div>
 
-        <x-primary-button class="w-full">Inloggen</x-primary-button>
+        <x-button class="w-full">Inloggen</x-button>
     </form>
 
     <p class="mt-8 border-t border-line pt-6 text-sm text-ink-muted">

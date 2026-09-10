@@ -12,10 +12,7 @@
                     <h1 class="text-2xl font-semibold text-ink">Verbindingen</h1>
                     <p class="mt-1.5 text-ink-muted">{{ $connections->count() }} rechtstreekse spoorlijnen, in beide richtingen te berijden</p>
                 </div>
-                <a href="{{ route('connections.create') }}"
-                   class="inline-flex items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-ink-inverse transition-colors hover:bg-primary-600">
-                    Verbinding toevoegen
-                </a>
+                <x-button :href="route('connections.create')">Verbinding toevoegen</x-button>
             </div>
         </div>
     </div>

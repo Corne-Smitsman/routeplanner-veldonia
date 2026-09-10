@@ -23,7 +23,7 @@
                     <form method="POST" action="{{ route('connections.destroy', $connection) }}">
                         @csrf
                         @method('delete')
-                        <x-danger-button>Definitief verwijderen</x-danger-button>
+                        <x-button variant="danger">Definitief verwijderen</x-button>
                     </form>
                     <a href="{{ route('connections.index') }}"
                        class="text-sm text-ink-muted transition-colors hover:text-ink">Annuleren</a>

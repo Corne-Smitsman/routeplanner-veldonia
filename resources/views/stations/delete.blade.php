@@ -24,7 +24,7 @@
                     <form method="POST" action="{{ route('stations.destroy', $station) }}">
                         @csrf
                         @method('delete')
-                        <x-danger-button>Definitief verwijderen</x-danger-button>
+                        <x-button variant="danger">Definitief verwijderen</x-button>
                     </form>
                     <a href="{{ route('stations.show', $station) }}"
                        class="text-sm text-ink-muted transition-colors hover:text-ink">Annuleren</a>
