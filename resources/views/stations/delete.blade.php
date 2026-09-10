@@ -6,7 +6,7 @@
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <x-breadcrumbs :items="[['label' => 'Steden', 'url' => route('stations.index')], ['label' => $station->name, 'url' => route('stations.show', $station)], ['label' => 'Verwijderen']]"/>
 
-        <div class="mt-6 rounded-xl border border-danger">
+        <div class="mt-6 rounded-xl border border-danger bg-surface">
             <div class="border-b border-danger px-5 py-3.5">
                 <h1 class="font-semibold text-danger-700">Stad verwijderen</h1>
             </div>

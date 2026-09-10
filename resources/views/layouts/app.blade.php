@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
+<body class="flex min-h-screen flex-col bg-surface-muted text-ink antialiased">
 
 @include('partials.header')
 

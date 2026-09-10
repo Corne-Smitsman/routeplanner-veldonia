@@ -3,7 +3,7 @@
 @section('title', $station->name . ' bewerken')
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Steden', 'url' => route('stations.index')], ['label' => $station->name, 'url' => route('stations.show', $station)], ['label' => 'Bewerken']]"/>
 
@@ -15,7 +15,7 @@
     <div class="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
         <x-validation-errors/>
 
-        <form method="POST" action="{{ route('stations.update', $station) }}" class="rounded-xl border border-line">
+        <form method="POST" action="{{ route('stations.update', $station) }}" class="rounded-xl border border-line bg-surface">
             @csrf
             @method('put')
             @include('stations._form', ['submit' => 'Wijzigingen opslaan', 'cancel' => route('stations.show', $station)])

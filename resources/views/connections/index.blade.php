@@ -3,7 +3,7 @@
 @section('title', 'Verbindingen')
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Verbindingen']]"/>
 
@@ -22,12 +22,12 @@
 
     <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         @if ($connections->isEmpty())
-            <div class="rounded-xl border border-line px-5 py-12 text-center">
+            <div class="rounded-xl border border-line bg-surface px-5 py-12 text-center">
                 <p class="text-ink-muted">Er zijn nog geen verbindingen.</p>
                 <a href="{{ route('connections.create') }}" class="mt-3 inline-block text-primary underline">Voeg de eerste verbinding toe</a>
             </div>
         @else
-            <div class="overflow-x-auto rounded-xl border border-line">
+            <div class="overflow-x-auto rounded-xl border border-line bg-surface">
                 <table class="w-full text-left text-sm">
                     <thead class="border-b border-line bg-surface-muted text-ink">
                         <tr>

@@ -3,7 +3,7 @@
 @section('title', $station->name)
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Steden', 'url' => route('stations.index')], ['label' => $station->name]]"/>
 
@@ -27,7 +27,7 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <div class="rounded-xl border border-line">
+        <div class="rounded-xl border border-line bg-surface">
             <div class="border-b border-line px-5 py-3.5">
                 <h2 class="font-semibold text-ink">Gegevens</h2>
             </div>

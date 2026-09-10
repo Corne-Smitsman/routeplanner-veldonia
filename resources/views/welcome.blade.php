@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite('resources/css/app.css')
 </head>
-<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
+<body class="flex min-h-screen flex-col bg-surface-muted text-ink antialiased">
 
 <header class="border-b-4 border-primary bg-secondary">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">

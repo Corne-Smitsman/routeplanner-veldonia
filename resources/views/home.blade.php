@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs class="mb-4"/>
 
@@ -15,7 +15,7 @@
     <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <div class="grid gap-8 lg:grid-cols-[2fr_1fr]">
 
-            <section class="rounded-xl border border-line">
+            <section class="rounded-xl border border-line bg-surface">
                 <div class="flex items-baseline justify-between border-b border-line bg-surface px-5 py-3.5">
                     <h2 class="font-semibold text-ink">Reis plannen</h2>
                     <span class="text-xs text-ink-soft">Binnenkort beschikbaar</span>
@@ -52,7 +52,7 @@
                 </div>
             </section>
 
-            <aside class="rounded-xl border border-line">
+            <aside class="rounded-xl border border-line bg-surface">
                 <div class="border-b border-line px-5 py-3.5">
                     <h2 class="font-semibold text-ink">Het net vandaag</h2>
                 </div>

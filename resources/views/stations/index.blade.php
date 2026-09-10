@@ -3,7 +3,7 @@
 @section('title', 'Steden')
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Steden']]"/>
 
@@ -22,12 +22,12 @@
 
     <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         @if ($stations->isEmpty())
-            <div class="rounded-xl border border-line px-5 py-12 text-center">
+            <div class="rounded-xl border border-line bg-surface px-5 py-12 text-center">
                 <p class="text-ink-muted">Er zijn nog geen steden.</p>
                 <a href="{{ route('stations.create') }}" class="mt-3 inline-block text-primary underline">Voeg de eerste stad toe</a>
             </div>
         @else
-            <div class="overflow-x-auto rounded-xl border border-line">
+            <div class="overflow-x-auto rounded-xl border border-line bg-surface">
                 <table class="w-full text-left text-sm">
                     <thead class="border-b border-line bg-surface-muted text-ink">
                         <tr>

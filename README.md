@@ -89,7 +89,7 @@ Overige afspraken:
 | Onderdeel | Afspraak |
 |---|---|
 | Container | `mx-auto max-w-7xl px-4 sm:px-6` |
-| Scheiding | Randen en vlakken, **geen** `shadow-*` |
+| Scheiding | De pagina is `surface-muted`, vlakken erop zijn `surface` met een rand; **geen** `shadow-*` |
 | Typografie | Normale schrijfwijze, **geen** `uppercase` |
 | Randen | `rounded-lg` voor knoppen en velden, `rounded-xl` voor panelen |
 | Interactie | `transition-colors` bij hover, active state met een onderrand van 2px |

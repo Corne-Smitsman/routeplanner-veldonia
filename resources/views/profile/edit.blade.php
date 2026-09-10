@@ -3,7 +3,7 @@
 @section('title', 'Mijn profiel')
 
 @section('content')
-    <div class="border-b border-line bg-surface-muted">
+    <div class="border-b border-line bg-surface">
         <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6">
             <x-breadcrumbs :items="[['label' => 'Mijn profiel']]"/>
 
@@ -13,15 +13,15 @@
     </div>
 
     <div class="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6">
-        <section class="rounded-xl border border-line">
+        <section class="rounded-xl border border-line bg-surface">
             @include('profile.partials.update-profile-information-form')
         </section>
 
-        <section class="rounded-xl border border-line">
+        <section class="rounded-xl border border-line bg-surface">
             @include('profile.partials.update-password-form')
         </section>
 
-        <section class="rounded-xl border border-danger-500">
+        <section class="rounded-xl border border-danger bg-surface-500">
             @include('profile.partials.delete-user-form')
         </section>
     </div>

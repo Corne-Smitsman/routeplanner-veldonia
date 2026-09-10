@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex min-h-screen flex-col bg-surface text-ink antialiased">
+<body class="flex min-h-screen flex-col bg-surface-muted text-ink antialiased">
 
 <header class="border-b-4 border-primary bg-secondary">
     <div class="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6">
@@ -19,7 +19,7 @@
 </header>
 
 <main class="flex flex-1 items-start justify-center px-4 py-12 sm:px-6">
-    <div class="w-full max-w-md">
+    <div class="w-full max-w-md rounded-xl border border-line bg-surface p-6 sm:p-8">
         {{ $slot }}
     </div>
 </main>
