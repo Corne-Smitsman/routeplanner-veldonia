@@ -26,7 +26,7 @@
         <div class="flex items-center justify-between">
             <label for="remember_me" class="flex items-center gap-2 text-sm text-ink-muted">
                 <input id="remember_me" type="checkbox" name="remember"
-                       class="rounded-lg border-line-strong text-secondary focus:ring-secondary">
+                       class="rounded-lg border-line-strong text-primary focus:ring-primary">
                 Ingelogd blijven
             </label>
 

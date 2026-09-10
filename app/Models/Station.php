@@ -9,4 +9,18 @@ class Station extends Model
 {
     /** @use HasFactory<\Database\Factories\StationFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'code',
+        'name',
+        'region',
+        'population',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'population' => 'integer',
+        ];
+    }
 }

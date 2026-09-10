@@ -10,7 +10,7 @@
 </head>
 <body class="flex h-full flex-col bg-surface text-ink antialiased">
 
-<header class="border-b-4 border-secondary bg-primary">
+<header class="border-b-4 border-primary bg-secondary">
     <div class="mx-auto flex h-16 max-w-5xl items-center px-4 sm:px-6">
         <a href="{{ route('welcome') }}">
             <x-application-logo variant="light" class="h-9 sm:h-10"/>

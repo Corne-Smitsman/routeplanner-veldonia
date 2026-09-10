@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 64" width="296" height="64">
   <g transform="translate(0,8) scale(0.75)">
     <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M8 42 H56" stroke="#12324f" stroke-width="7"/>
-      <path d="M24 42 L43 23" stroke="#a63a2e" stroke-width="7"/>
-      <circle cx="43" cy="23" r="4" fill="#a63a2e"/>
-      <circle cx="24" cy="42" r="8" fill="#ffffff" stroke="#12324f" stroke-width="4.5"/>
+      <path d="M8 42 H56" stroke="#111318" stroke-width="7"/>
+      <path d="M24 42 L43 23" stroke="#0f3d91" stroke-width="7"/>
+      <circle cx="43" cy="23" r="4" fill="#0f3d91"/>
+      <circle cx="24" cy="42" r="8" fill="#ffffff" stroke="#111318" stroke-width="4.5"/>
     </g>
   </g>
-  <text x="62" y="30" font-family="Helvetica Neue, Helvetica, Arial" font-size="21" font-weight="600" fill="#12324f">Spoorwegen Veldonia</text>
-  <text x="63" y="47" font-family="Helvetica Neue, Helvetica, Arial" font-size="12.5" fill="#6b7c8c">nationale spoorwegen</text>
+  <text x="62" y="30" font-family="Helvetica Neue, Helvetica, Arial" font-size="21" font-weight="600" fill="#111318">Spoorwegen Veldonia</text>
+  <text x="63" y="47" font-family="Helvetica Neue, Helvetica, Arial" font-size="12.5" fill="#626871">nationale spoorwegen</text>
 </svg>

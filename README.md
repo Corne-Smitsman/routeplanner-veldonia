@@ -40,8 +40,12 @@ Daarna:
 
 ```bash
 php artisan migrate --seed
+npm run build
 php artisan serve --port=8001
 ```
+
+De seeders vullen tien steden, vijftien verbindingen en het account uit `.env`.
+Ze zijn idempotent: opnieuw draaien levert geen dubbele rijen op.
 
 De app draait op http://127.0.0.1:8001
 
@@ -65,15 +69,15 @@ en worden in Tailwind gebruikt als `bg-primary`, `text-ink`, `border-line`, enzo
 
 | Term | Waarde | Gebruik |
 |---|---|---|
-| `primary` (+ `50`–`900`) | `#12324f` | Merkkleur: koptekstbalk, accenten |
-| `secondary` (+ `50`–`700`) | `#a63a2e` | Actieknoppen, active state, waarschuwingen |
-| `surface` | `#ffffff` | Standaard paginavlak |
-| `surface-muted` | `#f3f7fa` | Rustig vlak, paginakoppen |
-| `surface-dark` | `#16385a` | Vlak op donkere achtergrond |
-| `line` / `line-strong` | `#c6dae8` / `#9dbdd6` | Randen en scheidingslijnen |
-| `line-dark` | `#1c4468` | Rand op donkere achtergrond |
-| `ink` / `ink-muted` / `ink-soft` | `#12324f` / `#345d82` / `#6b98bb` | Tekst: normaal, gedempt, subtiel |
+| `primary` (+ `50`–`900`) | `#0f3d91` | Blauw accent: knoppen, links, active state |
+| `secondary` (+ `50`–`900`) | `#111318` | Zwart: merkbalk, donkere vlakken |
+| `danger` (+ `50`–`700`) | `#b3261e` | Alleen voor foutmeldingen en verwijderacties |
+| `surface` / `surface-muted` | `#ffffff` / `#f6f7f8` | Paginavlakken |
+| `line` / `line-strong` / `line-dark` | `#e2e5e9` / `#c4c9d0` / `#2f333a` | Randen en scheidingslijnen |
+| `ink` / `ink-muted` / `ink-soft` | `#111318` / `#454a52` / `#878d97` | Tekst: normaal, gedempt, subtiel |
 | `ink-inverse` | `#ffffff` | Tekst op donkere achtergrond |
+
+De huisstijl is zwart, wit en blauw. Rood komt alleen voor als foutkleur.
 
 Overige afspraken:
 
@@ -108,10 +112,12 @@ overige zit achter de `auth`-middleware; wie niet is ingelogd komt op het inlogs
 
 Vul dit in zodra de seeder uit user story 5.4 klaar is.
 
-| Rol | E-mail | Wachtwoord |
-|---|---|---|
-| — | test@veldonia.nl | wachtwoord |
+| E-mail | Wachtwoord |
+|---|---|
+| corne@innovaware.nl | uit `ADMIN_PASSWORD` in `.env` |
 
+De `UserSeeder` maakt dit account aan op basis van `ADMIN_NAME`, `ADMIN_EMAIL` en
+`ADMIN_PASSWORD` uit `.env`. Zonder `ADMIN_PASSWORD` slaat de seeder het account over.
 Rollen (reiziger en beheerder) volgen in een latere fase.
 
 ## Geïmplementeerde user stories

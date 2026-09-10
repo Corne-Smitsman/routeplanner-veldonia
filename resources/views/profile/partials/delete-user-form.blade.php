@@ -1,5 +1,5 @@
-<div class="border-b border-secondary-500 px-5 py-3.5">
-    <h2 class="font-semibold text-secondary-700">Account verwijderen</h2>
+<div class="border-b border-danger-500 px-5 py-3.5">
+    <h2 class="font-semibold text-danger-700">Account verwijderen</h2>
 </div>
 
 <div class="p-5">

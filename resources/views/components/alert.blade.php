@@ -3,7 +3,7 @@
 @php
     $styles = [
         'success' => 'border-line-strong bg-surface-muted text-ink',
-        'error'   => 'border-secondary-500 bg-secondary-50 text-secondary-700',
+        'error'   => 'border-danger-500 bg-danger-50 text-danger-700',
     ][$type] ?? 'border-line-strong bg-surface-muted text-ink';
 @endphp
 

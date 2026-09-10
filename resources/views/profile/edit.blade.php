@@ -19,7 +19,7 @@
             @include('profile.partials.update-password-form')
         </section>
 
-        <section class="rounded-xl border border-secondary-500">
+        <section class="rounded-xl border border-danger-500">
             @include('profile.partials.delete-user-form')
         </section>
     </div>

@@ -2,16 +2,29 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $account = config('veldonia.admin');
+
+        if (blank($account['password'])) {
+            $this->command->warn('ADMIN_PASSWORD ontbreekt in .env — gebruiker niet aangemaakt.');
+
+            return;
+        }
+
+        User::updateOrCreate(
+            ['email' => $account['email']],
+            [
+                'name' => $account['name'],
+                'password' => Hash::make($account['password']),
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }

@@ -7,36 +7,47 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    --color-primary: #12324f;
-    --color-primary-50: #f3f7fa;
-    --color-primary-100: #e4edf4;
-    --color-primary-200: #c6dae8;
-    --color-primary-300: #9dbdd6;
-    --color-primary-400: #6b98bb;
-    --color-primary-500: #47769e;
-    --color-primary-600: #345d82;
-    --color-primary-700: #1c4468;
-    --color-primary-800: #16385a;
-    --color-primary-900: #12324f;
+    --color-primary: #0f3d91;
+    --color-primary-50: #eff4fd;
+    --color-primary-100: #dbe6fa;
+    --color-primary-200: #b7cbf3;
+    --color-primary-300: #88a8e6;
+    --color-primary-400: #547fd2;
+    --color-primary-500: #2a5cb8;
+    --color-primary-600: #1a4aa3;
+    --color-primary-700: #0f3d91;
+    --color-primary-800: #0c3175;
+    --color-primary-900: #0a2557;
 
-    --color-secondary: #a63a2e;
-    --color-secondary-50: #fdf4f2;
-    --color-secondary-100: #fae5e1;
-    --color-secondary-200: #f2c7bf;
-    --color-secondary-500: #c04a3c;
-    --color-secondary-600: #a63a2e;
-    --color-secondary-700: #8d3027;
+    --color-secondary: #111318;
+    --color-secondary-50: #f6f7f8;
+    --color-secondary-100: #eceef0;
+    --color-secondary-200: #d7dade;
+    --color-secondary-300: #b4b9c0;
+    --color-secondary-400: #878d97;
+    --color-secondary-500: #626871;
+    --color-secondary-600: #454a52;
+    --color-secondary-700: #2f333a;
+    --color-secondary-800: #1e2127;
+    --color-secondary-900: #111318;
+
+    --color-danger: #b3261e;
+    --color-danger-50: #fdf3f2;
+    --color-danger-100: #fae3e1;
+    --color-danger-500: #cf3b32;
+    --color-danger-600: #b3261e;
+    --color-danger-700: #8f1d17;
 
     --color-surface: #ffffff;
-    --color-surface-muted: #f3f7fa;
-    --color-surface-dark: #16385a;
+    --color-surface-muted: #f6f7f8;
+    --color-surface-dark: #1e2127;
 
-    --color-line: #c6dae8;
-    --color-line-strong: #9dbdd6;
-    --color-line-dark: #1c4468;
+    --color-line: #e2e5e9;
+    --color-line-strong: #c4c9d0;
+    --color-line-dark: #2f333a;
 
-    --color-ink: #12324f;
-    --color-ink-muted: #345d82;
-    --color-ink-soft: #6b98bb;
+    --color-ink: #111318;
+    --color-ink-muted: #454a52;
+    --color-ink-soft: #878d97;
     --color-ink-inverse: #ffffff;
 }

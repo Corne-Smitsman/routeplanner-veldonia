@@ -9,10 +9,10 @@ Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md
 - [x] 0.4 Statische informatiepagina
 
 ## Fase 1 — Migraties en seeders (4 uur)
-- [ ] 1.1 Migratie stations
-- [ ] 1.2 Seeder stations
-- [ ] 1.3 Migratie connections
-- [ ] 1.4 Seeder connections
+- [x] 1.1 Migratie stations
+- [x] 1.2 Seeder stations
+- [x] 1.3 Migratie connections
+- [x] 1.4 Seeder connections
 
 ## Fase 2 — CRUD-basis (8 uur)
 - [ ] 2.1 Overzicht van steden
