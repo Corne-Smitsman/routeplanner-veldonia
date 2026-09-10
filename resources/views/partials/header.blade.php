@@ -29,8 +29,8 @@
         </div>
     </div>
 
-    <header class="relative bg-surface-muted px-3 py-3 md:px-5">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 rounded-full border border-line bg-surface px-5 py-2.5 md:px-6">
+    <header class="relative bg-transparent px-3 py-3 md:px-5">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 rounded-full border border-line bg-surface p-2 md:px-3">
 
             <a href="{{ route('home') }}" class="block flex-none">
                 <img src="{{ asset('images/logo.png') }}"
@@ -38,40 +38,43 @@
                      alt="Spoorwegen Veldonia" class="block h-9 w-auto md:h-11">
             </a>
 
-            <nav class="hidden min-w-0 flex-1 items-center justify-center gap-x-7 text-sm lg:flex" aria-label="Hoofdmenu">
-                @foreach ($navigatie as $item)
-                    <a href="{{ route($item['route']) }}"
-                       @class([
-                           'relative whitespace-nowrap transition-colors',
-                           'font-medium text-ink after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-primary' => request()->routeIs($item['actief']),
-                           'text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
-                       ])
-                       @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
-                        {{ $item['label'] }}
-                    </a>
-                @endforeach
-            </nav>
+            
+            <div class="flex flex-none items-center gap-x-7">
+                <nav class="hidden items-center gap-x-7 text-sm lg:flex" aria-label="Hoofdmenu">
+                    @foreach ($navigatie as $item)
+                        <a href="{{ route($item['route']) }}"
+                           @class([
+                               'relative whitespace-nowrap transition-colors',
+                               'font-medium text-ink after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-primary' => request()->routeIs($item['actief']),
+                               'text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
+                           ])
+                           @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
+                            {{ $item['label'] }}
+                        </a>
+                    @endforeach
+                </nav>
 
-            <a href="{{ route($cta['route']) }}"
-               @class([
-                   'hidden flex-none items-center gap-2.5 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium text-ink-inverse transition-colors lg:inline-flex',
-                   'bg-primary-800' => request()->routeIs($cta['actief']),
-                   'bg-primary hover:bg-primary-800' => ! request()->routeIs($cta['actief']),
-               ])>
-                {{ $cta['label'] }}
-                <span aria-hidden="true">&rarr;</span>
-            </a>
+                <a href="{{ route($cta['route']) }}"
+                   @class([
+                       'hidden items-center gap-2.5 whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-medium text-ink-inverse transition-colors lg:inline-flex',
+                       'bg-primary-800' => request()->routeIs($cta['actief']),
+                       'bg-primary hover:bg-primary-800' => ! request()->routeIs($cta['actief']),
+                   ])>
+                    {{ $cta['label'] }}
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
 
-            <button type="button"
-                    x-on:click="open = ! open"
-                    x-bind:aria-expanded="open"
-                    aria-controls="mobiel-menu"
-                    class="flex flex-none cursor-pointer flex-col gap-1.25 border-0 bg-transparent p-2 lg:hidden">
-                <span class="sr-only">Menu</span>
-                <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? 'translate-y-1.75 rotate-45' : ''"></span>
-                <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? 'opacity-0' : ''"></span>
-                <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? '-translate-y-1.75 -rotate-45' : ''"></span>
-            </button>
+                <button type="button"
+                        x-on:click="open = ! open"
+                        x-bind:aria-expanded="open"
+                        aria-controls="mobiel-menu"
+                        class="flex cursor-pointer flex-col gap-1.25 border-0 bg-transparent p-2 lg:hidden">
+                    <span class="sr-only">Menu</span>
+                    <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? 'translate-y-1.75 rotate-45' : ''"></span>
+                    <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? 'opacity-0' : ''"></span>
+                    <span class="block h-0.5 w-6 bg-secondary" x-bind:class="open ? '-translate-y-1.75 -rotate-45' : ''"></span>
+                </button>
+            </div>
         </div>
 
         <div id="mobiel-menu"
