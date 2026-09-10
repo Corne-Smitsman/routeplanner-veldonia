@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 // FASE 0 — MVC-basis
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/over-veldonia', [PageController::class, 'about'])->name('about');
 
 /*
-| TODO 0.4  GET  /over-veldonia    -> PageController@about          (name: about)
-|
 | FASE 2 — CRUD steden en verbindingen
 | TODO 2.1  GET  /stations                 -> StationController@index
 | TODO 2.2  GET  /stations/{station}       -> StationController@show   (route-model-binding)

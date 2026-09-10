@@ -6,4 +6,16 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Huisstijl Spoorwegen Veldonia — rustige, gedempte blauwgrijstinten */
+    --color-rail-50: #f4f7fa;
+    --color-rail-100: #e7eef4;
+    --color-rail-200: #cddce8;
+    --color-rail-300: #a7c0d5;
+    --color-rail-400: #7599b8;
+    --color-rail-500: #4f7599;
+    --color-rail-600: #3a5c7c;
+    --color-rail-700: #2c4763;
+    --color-rail-800: #24384e;
+    --color-rail-900: #1b2a3a;
 }

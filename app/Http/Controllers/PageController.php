@@ -1,15 +1,19 @@
 <?php
 
-/**
- * User story 0.4 — Statische informatiepagina
- * TODO: about() retourneert de view 'about'.
- */
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
+/**
+ * User story 0.4 — Statische informatiepagina
+ */
 class PageController extends Controller
 {
-    //
+    /**
+     * Toont de informatiepagina over het fictieve land Veldonia.
+     */
+    public function about(): View
+    {
+        return view('about');
+    }
 }

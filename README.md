@@ -58,8 +58,31 @@ npm run build   # voor oplevering
 Elke view laadt de stylesheet met `@vite('resources/css/app.css')`.
 Vanaf user story 0.3 gebeurt dat één keer centraal in de masterlayout.
 
-**Conventie**: paginacontent staat in een container `mx-auto max-w-7xl px-6`,
-zodat alle pagina's dezelfde breedte en marges hebben.
+### Huisstijl
+
+Rustig en clean, zonder opsmuk. Houd je in alle nieuwe views aan deze regels:
+
+| Onderdeel | Afspraak |
+|---|---|
+| Container | `mx-auto max-w-7xl px-6` — alle pagina's dezelfde breedte en marges |
+| Kleuren | Alleen het `rail`-palet uit `resources/css/app.css` (`rail-50` t/m `rail-900`) |
+| Scheiding | Randen (`border-rail-200`) en vlakken, **geen** `shadow-*` |
+| Typografie | Normale schrijfwijze, **geen** `uppercase` of `tracking-wide` |
+| Koppen | `font-semibold text-rail-900`, tekst `text-rail-600` |
+| Randen | `rounded-md` voor knoppen, `rounded-lg` voor kaders |
+| Interactie | `transition-colors` bij hover, active state met een onderrand van 2px |
+
+### Layout
+
+| Bestand | Rol |
+|---|---|
+| `resources/views/layouts/app.blade.php` | Masterlayout met `@yield('content')` |
+| `resources/views/partials/header.blade.php` | Sticky header met navigatie en active state |
+| `resources/views/partials/footer.blade.php` | Footer |
+| `resources/views/partials/logo.blade.php` | Beeldmerk (SVG), herbruikbaar via `@include` |
+| `public/favicon.svg` | Favicon met hetzelfde beeldmerk |
+
+Elke nieuwe pagina begint met `@extends('layouts.app')` en vult `@section('title')` en `@section('content')`.
 
 ## Testaccounts
 
