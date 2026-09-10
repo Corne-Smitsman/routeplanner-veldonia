@@ -29,13 +29,13 @@
         </div>
     </div>
 
-    <div class="p-2" x-data="{ open: false }" @keydown.escape.window="open = false">
+    <div class="p-2" x-data="{ open: false }" x-on:keydown.escape.window="open = false">
         <div class="mx-auto max-w-7xl">
             <div class="flex items-center justify-between gap-4 rounded-full border border-line bg-white/70 p-1.5 pl-5 backdrop-blur-xl">
                 <a href="{{ route('home') }}" class="shrink-0">
                     <img src="{{ asset('images/logo.png') }}"
                          srcset="{{ asset('images/logo.png') }} 1x, {{ asset('images/logo@2x.png') }} 2x"
-                         alt="Spoorwegen Veldonia" class="h-10 w-auto sm:h-12">
+                         alt="Spoorwegen Veldonia" class="h-12 w-auto sm:h-16">
                 </a>
 
                 <nav class="hidden items-center gap-1 text-sm lg:flex" aria-label="Hoofdnavigatie">
@@ -62,9 +62,11 @@
                     </a>
                 </nav>
 
-                <button type="button" @click="open = ! open"
-                        class="rounded-full bg-primary p-3 text-ink-inverse transition-colors hover:bg-primary-600 lg:hidden"
-                        :aria-expanded="open ? 'true' : 'false'" aria-label="Menu">
+                <button type="button"
+                        x-on:click="open = ! open"
+                        x-bind:aria-expanded="open"
+                        aria-label="Menu"
+                        class="rounded-full bg-primary p-3 text-ink-inverse transition-colors hover:bg-primary-600 lg:hidden">
                     <svg x-show="! open" class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                         <path d="M3 6h14"/>
                         <path d="M3 10h14"/>
@@ -77,7 +79,7 @@
                 </button>
             </div>
 
-            <nav x-show="open" x-cloak @click.outside="open = false"
+            <nav x-show="open" x-cloak x-on:click.outside="open = false"
                  class="mt-2 space-y-1 rounded-2xl border border-line bg-surface p-2 text-sm lg:hidden"
                  aria-label="Mobiele navigatie">
                 @foreach ($navigatie as $item)
@@ -93,7 +95,7 @@
 
                 <a href="{{ route($knop['route']) }}"
                    @class([
-                       'block rounded-xl px-4 py-3 text-center font-medium text-ink-inverse transition-colors',
+                       'block rounded-full px-3 py-6 text-center font-medium text-ink-inverse transition-colors',
                        'bg-primary-800' => request()->routeIs($knop['actief']),
                        'bg-primary hover:bg-primary-600' => ! request()->routeIs($knop['actief']),
                    ])>
