@@ -13,9 +13,9 @@
     ][$variant];
 
     $bol = [
-        'primary' => 'bg-primary-800',
-        'outline' => 'bg-primary',
-        'danger' => 'bg-danger-700',
+        'primary' => 'bg-surface text-primary',
+        'outline' => 'bg-primary text-ink-inverse',
+        'danger' => 'bg-surface text-danger',
     ][$variant];
 
     $basis = 'group relative inline-flex cursor-pointer items-center';
