@@ -1,6 +1,7 @@
 @php
     $navigatie = [
         ['label' => 'Home', 'url' => route('home'), 'actief' => request()->routeIs('home')],
+        ['label' => 'Steden', 'url' => route('station'), 'actief' => request()->routeIs('station')],
     ];
 @endphp
 
