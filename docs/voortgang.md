@@ -15,14 +15,14 @@ Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md
 - [x] 1.4 Seeder connections
 
 ## Fase 2 — CRUD-basis (8 uur)
-- [x] 2.1 Overzicht van steden
-- [x] 2.2 Detailpagina van een station
-- [x] 2.3 Station toevoegen
-- [x] 2.4 Station bewerken
-- [x] 2.5 Station verwijderen
-- [x] 2.6 Overzicht van verbindingen
-- [x] 2.7 Verbinding toevoegen
-- [x] 2.8 Verbinding bewerken/verwijderen
+- [ ] 2.1 Overzicht van steden
+- [ ] 2.2 Detailpagina van een station
+- [ ] 2.3 Station toevoegen
+- [ ] 2.4 Station bewerken
+- [ ] 2.5 Station verwijderen
+- [ ] 2.6 Overzicht van verbindingen
+- [ ] 2.7 Verbinding toevoegen
+- [ ] 2.8 Verbinding bewerken/verwijderen
 
 ## Fase 3 — Eloquent-relaties (4 uur)
 - [ ] 3.1 Relaties tussen Station en Connection
@@ -43,9 +43,9 @@ Vink af wat af is en getoetst is aan de acceptatiecriteria in `docs/use-cases.md
 - [ ] 4.10 Performance-optimalisatie
 
 ## Fase 5 — Authenticatie (4 uur)
-- [x] 5.1 Registreren en inloggen
-- [x] 5.2 Ingelogde status in de navigatie
-- [x] 5.3 Routeplanner alleen voor ingelogde gebruikers (hele app afgeschermd)
+- [ ] 5.1 Registreren en inloggen
+- [ ] 5.2 Ingelogde status in de navigatie
+- [ ] 5.3 Routeplanner alleen voor ingelogde gebruikers
 - [ ] 5.4 Gebruikersrol toevoegen
 
 ## Fase 6 — Persoonlijke functionaliteit (6 uur)

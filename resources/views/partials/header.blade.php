@@ -1,33 +1,10 @@
 @php
     $navigatie = [
-        ['label' => 'Home', 'route' => 'home', 'actief' => 'home'],
-        ['label' => 'Steden', 'route' => 'stations.index', 'actief' => 'stations.*'],
-        ['label' => 'Verbindingen', 'route' => 'connections.index', 'actief' => 'connections.*'],
+        ['label' => 'Home', 'url' => route('home'), 'actief' => request()->routeIs('home')],
     ];
-
-    $cta = ['label' => 'Over Veldonia', 'route' => 'about', 'actief' => 'about'];
 @endphp
 
 <div class="sticky top-0 z-50" x-data="{ open: false }" x-on:keydown.escape.window="open = false">
-
-    <div class="bg-secondary text-xs text-secondary-300">
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-1.5 md:px-8">
-            <span class="min-w-0 truncate">{{ auth()->user()->name }}</span>
-
-            <div class="flex flex-none items-center gap-x-5">
-                <a href="{{ route('profile.edit') }}" class="text-secondary-200 transition-colors hover:text-ink-inverse">
-                    Profiel
-                </a>
-
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="text-secondary-200 transition-colors hover:text-ink-inverse">
-                        Uitloggen
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <header class="relative bg-transparent px-3 py-3 md:px-5">
         <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 rounded-full border border-line bg-surface p-2 md:px-3">
@@ -38,26 +15,23 @@
                      alt="Spoorwegen Veldonia" class="block h-9 w-auto md:h-11">
             </a>
 
-
             <div class="flex flex-none items-center gap-x-7">
                 <nav class="hidden items-center gap-x-7 text-sm lg:flex" aria-label="Hoofdmenu">
                     @foreach ($navigatie as $item)
-                        <a href="{{ route($item['route']) }}"
+                        <a href="{{ $item['url'] }}"
                            @class([
                                'relative whitespace-nowrap transition-colors',
-                               'font-medium text-ink after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-primary' => request()->routeIs($item['actief']),
-                               'text-ink-muted hover:text-ink' => ! request()->routeIs($item['actief']),
+                               'font-medium text-ink after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-primary' => $item['actief'],
+                               'text-ink-muted hover:text-ink' => ! $item['actief'],
                            ])
-                           @if (request()->routeIs($item['actief'])) aria-current="page" @endif>
+                           @if ($item['actief']) aria-current="page" @endif>
                             {{ $item['label'] }}
                         </a>
                     @endforeach
                 </nav>
 
                 <div class="hidden lg:block">
-                    <x-button :href="route($cta['route'])">
-                        {{ $cta['label'] }}
-                    </x-button>
+                    <x-button :href="route('about')">Over Veldonia</x-button>
                 </div>
 
                 <button type="button"
@@ -80,20 +54,18 @@
              class="absolute inset-x-3 top-full z-40 mt-1 overflow-hidden rounded-2xl border border-line bg-surface p-2 md:inset-x-5 lg:hidden">
 
             @foreach ($navigatie as $item)
-                <a href="{{ route($item['route']) }}"
+                <a href="{{ $item['url'] }}"
                    @class([
                        'block rounded-xl px-4 py-3 text-sm transition-colors',
-                       'bg-primary-50 font-medium text-primary' => request()->routeIs($item['actief']),
-                       'text-ink-muted hover:bg-surface-muted hover:text-ink' => ! request()->routeIs($item['actief']),
+                       'bg-primary-50 font-medium text-primary' => $item['actief'],
+                       'text-ink-muted hover:bg-surface-muted hover:text-ink' => ! $item['actief'],
                    ])>
                     {{ $item['label'] }}
                 </a>
             @endforeach
 
             <div class="mt-2 border-t border-line pt-2">
-                <x-button :href="route($cta['route'])" full>
-                    {{ $cta['label'] }}
-                </x-button>
+                <x-button :href="route('about')" full>Over Veldonia</x-button>
             </div>
         </div>
     </header>

@@ -13,18 +13,6 @@
 @include('partials.header')
 
 <main class="flex-1">
-    @if (session('status') || session('success'))
-        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-            <x-alert>{{ session('status') ?? session('success') }}</x-alert>
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
-            <x-alert type="error">{{ session('error') }}</x-alert>
-        </div>
-    @endif
-
     @yield('content')
 </main>
 

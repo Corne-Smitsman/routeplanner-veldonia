@@ -1,8 +1,8 @@
 <footer class="mt-auto bg-secondary">
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-8 sm:grid-cols-2">
 
-            <div class="sm:col-span-2 lg:col-span-1">
+            <div>
                 <img src="{{ asset('images/logo-light.png') }}"
                      srcset="{{ asset('images/logo-light.png') }} 1x, {{ asset('images/logo-light@2x.png') }} 2x"
                      alt="Spoorwegen Veldonia" class="h-9 w-auto">
@@ -13,33 +13,9 @@
             </div>
 
             <div>
-                <h2 class="text-sm font-semibold text-ink-inverse">Reizen</h2>
+                <h2 class="text-sm font-semibold text-ink-inverse">Menu</h2>
                 <ul class="mt-3 space-y-2 text-sm">
-                    <li><span class="text-secondary-500" title="Binnenkort beschikbaar">Reisplanner</span></li>
-                    <li><span class="text-secondary-500" title="Binnenkort beschikbaar">Mijn favorieten</span></li>
-                    <li><span class="text-secondary-500" title="Binnenkort beschikbaar">Zoekgeschiedenis</span></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-sm font-semibold text-ink-inverse">Het netwerk</h2>
-                <ul class="mt-3 space-y-2 text-sm">
-                    <li><a href="{{ route('stations.index') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Steden</a></li>
-                    <li><a href="{{ route('connections.index') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Verbindingen</a></li>
-                    <li><a href="{{ route('about') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Over Veldonia</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="text-sm font-semibold text-ink-inverse">Account</h2>
-                <ul class="mt-3 space-y-2 text-sm">
-                    <li><a href="{{ route('profile.edit') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Mijn profiel</a></li>
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="text-secondary-300 transition-colors hover:text-ink-inverse">Uitloggen</button>
-                        </form>
-                    </li>
+                    <li><a href="{{ route('home') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Home</a></li>                    <li><a href="{{ route('about') }}" class="text-secondary-300 transition-colors hover:text-ink-inverse">Over Veldonia</a></li>
                 </ul>
             </div>
         </div>

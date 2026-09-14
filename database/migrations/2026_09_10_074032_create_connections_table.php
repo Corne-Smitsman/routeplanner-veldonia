@@ -10,13 +10,11 @@ return new class extends Migration
     {
         Schema::create('connections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('from_station_id')->constrained('stations')->cascadeOnUpdate()->restrictOnDelete();
-            $table->foreignId('to_station_id')->constrained('stations')->cascadeOnUpdate()->restrictOnDelete();
-            $table->unsignedSmallInteger('distance_km');
-            $table->unsignedSmallInteger('duration_minutes');
+            $table->foreignId('from_station_id')->constrained('stations');
+            $table->foreignId('to_station_id')->constrained('stations');
+            $table->integer('distance_km');
+            $table->integer('duration_minutes');
             $table->timestamps();
-
-            $table->unique(['from_station_id', 'to_station_id']);
         });
     }
 
