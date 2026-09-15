@@ -13,6 +13,22 @@
 @include('partials.header')
 
 <main class="flex-1">
+    @if (session('success'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <div class="rounded-xl border border-primary-200 bg-primary-50 px-5 py-3 text-sm font-medium text-primary">
+                {{ session('success') }}
+            </div>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
+            <div class="rounded-xl border border-danger-100 bg-danger-50 px-5 py-3 text-sm font-medium text-danger-700">
+                {{ session('error') }}
+            </div>
+        </div>
+    @endif
+
     @yield('content')
 </main>
 

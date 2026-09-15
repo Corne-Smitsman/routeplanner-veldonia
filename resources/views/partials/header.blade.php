@@ -2,6 +2,7 @@
     $navigatie = [
         ['label' => 'Home', 'url' => route('home'), 'actief' => request()->routeIs('home')],
         ['label' => 'Steden', 'url' => route('station'), 'actief' => request()->routeIs('station')],
+        ['label' => 'Verbindingen', 'url' => route('connection'), 'actief' => request()->routeIs('connection')],
     ];
 @endphp
 
@@ -30,6 +31,24 @@
                         </a>
                     @endforeach
                 </nav>
+
+                <div class="hidden items-center gap-x-5 text-sm lg:flex">
+                    @guest
+                        <a href="{{ route('login') }}" class="text-ink-muted hover:text-ink">Inloggen</a>
+                        <a href="{{ route('register') }}" class="text-ink-muted hover:text-ink">Registreren</a>
+                    @endguest
+
+                    @auth
+                        <span class="text-ink-muted">
+                            {{ auth()->user()->name }} ({{ auth()->user()->role->label() }})
+                        </span>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="text-ink-muted hover:text-ink">Uitloggen</button>
+                        </form>
+                    @endauth
+                </div>
 
                 <div class="hidden lg:block">
                     <x-button :href="route('about')">Over Veldonia</x-button>
